@@ -35,6 +35,8 @@ epi_pal_d <- function(palette = "main",
     #   stop("Argument 'secondary' does not apply with more than two levels")
     # }
 
+    # stop() for when primary and secondary color is the same?
+
     if (!is.null(primary) && !primary %in% names(pal)) {
       stop("Provided primary color is not in the Epinion color palette")
     }
