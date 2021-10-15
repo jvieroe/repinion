@@ -1,5 +1,8 @@
 ## code to prepare `DATASET` dataset goes here
 
+# https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2
+
+
 # ---------- Create vector of colors ----------
 epi_cols <- tibble::tibble(
   name = c(
@@ -36,8 +39,6 @@ epi_cols <- tibble::deframe(epi_cols)
 # Upload data to GitHub
 usethis::use_data(epi_cols,
                   overwrite = TRUE)
-
-# https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2
 
 
 
