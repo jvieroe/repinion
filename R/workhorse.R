@@ -21,19 +21,19 @@ epi_pal_d <- function(palette = "main",
 
   pal <- epipal_d[[palette]]
 
-  stopifnot(primary %in% names(pal))
+  #stopifnot(primary %in% names(pal))
 
   #print(names(pal))
 
   function(n) {
 
-    if (n > 2 && !is.null(primary)) {
-      stop("Argument 'primary' does not apply with more than two levels")
-    }
-
-    if (n > 2 && !is.null(secondary)) {
-      stop("Argument 'secondary' does not apply with more than two levels")
-    }
+    # if (n > 2 && !is.null(primary)) {
+    #   stop("Argument 'primary' does not apply with more than two levels")
+    # }
+    #
+    # if (n > 2 && !is.null(secondary)) {
+    #   stop("Argument 'secondary' does not apply with more than two levels")
+    # }
 
     if (!is.null(primary) && !primary %in% names(pal)) {
       stop("Provided primary color is not in the Epinion color palette")
