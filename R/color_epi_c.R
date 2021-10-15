@@ -16,7 +16,7 @@ color_epi_c <- function(palette = "epiblue",
                         reverse = FALSE,
                         ...) {
 
-  pal <- epipal_c(palette = palette, reverse = reverse)
+  pal <- epi_pal_c(palette = palette, reverse = reverse)
 
   scale_color_gradientn(colours = pal(256), ...)
 
