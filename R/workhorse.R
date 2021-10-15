@@ -27,6 +27,22 @@ epi_pal_d <- function(palette = "main",
 
   function(n) {
 
+    if (n > 2 && !is.null(primary)) {
+      stop("Argument 'primary' does not apply with more than two levels")
+    }
+
+    if (n > 2 && !is.null(secondary)) {
+      stop("Argument 'secondary' does not apply with more than two levels")
+    }
+
+    if (!is.null(primary) && !primary %in% names(pal)) {
+      stop("Provided primary color is not in the Epinion color palette")
+    }
+
+    if (!is.null(secondary) && !secondary %in% names(pal)) {
+      stop("Provided secondary color is not in the Epinion color palette")
+    }
+
     if (n > 12) warning("The discrete color palette only has 12 colors.")
 
     if (n == 2) {
