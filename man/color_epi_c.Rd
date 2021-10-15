@@ -4,7 +4,7 @@
 \alias{color_epi_c}
 \title{Apply a continuous color scale to your \code{ggplot2} graphics}
 \usage{
-color_epi_c(palette = "reds", reverse = FALSE, ...)
+color_epi_c(palette = "epiblue", reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{a continuous color palette. Default is "reds"}
