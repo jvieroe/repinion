@@ -18,6 +18,6 @@ color_epi_c <- function(palette = "reds",
 
   pal <- epipal_c(palette = palette, reverse = reverse)
 
-  scale_color_gradientn(colours = pal(25), ...)
+  scale_color_gradientn(colours = pal(256), ...)
 
 }
