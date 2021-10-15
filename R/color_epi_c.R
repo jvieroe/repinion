@@ -12,7 +12,7 @@
 #' @author Jeppe Vierø
 #' @export
 
-color_epi_c <- function(palette = "reds",
+color_epi_c <- function(palette = "epiblue",
                         reverse = FALSE,
                         ...) {
 
