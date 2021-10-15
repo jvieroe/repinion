@@ -67,18 +67,18 @@ epipal_d <- list()
 
 epipal_d$main <- list(
 
-  "Epi_DarkBlue" = "#0F283C",
-  "Epi_WarmSand" = "#E8E1D5",
-  "Epi_DarkPurple" = "#641E3C",
-  "Epi_ClearBlue" = "#233CA0",
-  "Epi_LightDeepBlue" = "#68838B",
-  "Epi_LightPurple" = "#BA7384",
-  "Epi_LightBlue" = "#A7C7D7",
-  "Epi_Green" = "#004337",
-  "Epi_LightGreen" = "#73A89A",
-  "Epi_Gold" = "#C18022",
-  "Epi_LightGold" = "#EBC882",
-  "Epi_Red" = "#E13C32"
+  "Epinion DarkBlue" = "#0F283C",
+  "Epinion WarmSand" = "#E8E1D5",
+  "Epinion DarkPurple" = "#641E3C",
+  "Epinion ClearBlue" = "#233CA0",
+  "Epinion LightDeepBlue" = "#68838B",
+  "Epinion LightPurple" = "#BA7384",
+  "Epinion LightBlue" = "#A7C7D7",
+  "Epinion Green" = "#004337",
+  "Epinion LightGreen" = "#73A89A",
+  "Epinion Gold" = "#C18022",
+  "Epinion LightGold" = "#EBC882",
+  "Epinion Red" = "#E13C32"
 
 )
 
