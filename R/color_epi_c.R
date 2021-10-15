@@ -20,4 +20,5 @@ color_epi_c <- function(palette = "reds",
 
   scale_color_gradientn(colours = pal(256), ...)
 
+
 }
