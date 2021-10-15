@@ -16,7 +16,7 @@ epi_pal_c <- function(palette = "epiblue",
 #' @noRd
 epi_pal_d <- function(palette = "main",
                       primary = "Epinion DarkBlue",
-                      other = "Epinion WarmSand",
+                      secondary = "Epinion WarmSand",
                       reverse = FALSE) {
 
   pal <- epipal_d[[palette]]
@@ -31,17 +31,17 @@ epi_pal_d <- function(palette = "main",
 
     if (n == 2) {
 
-      other <- if (!other %in% names(pal)) {
+      secondary <- if (!secondary %in% names(pal)) {
 
-        other
+        secondary
 
       } else {
 
-        pal[other]
+        pal[secondary]
 
       }
 
-      color_list <- c(other, pal[primary])
+      color_list <- c(secondary, pal[primary])
 
     } else {
 
@@ -58,5 +58,10 @@ epi_pal_d <- function(palette = "main",
 }
 
 
+#' @noRd
+colour_epi_d <- color_epi_d
 
+
+#' @noRd
+colour_epi_c <- color_epi_c
 
