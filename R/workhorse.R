@@ -75,11 +75,3 @@ epi_pal_d <- function(palette = "main",
 
 }
 
-
-#' @noRd
-colour_epi_d <- color_epi_d
-
-
-#' @noRd
-colour_epi_c <- color_epi_c
-
