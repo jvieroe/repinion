@@ -14,8 +14,8 @@
 #' @export
 
 color_epi_d <- function(palette = "main",
-                        primary = "Epinion DarkBlue",
-                        secondary = "Epinion WarmSand",
+                        primary = NULL, # "Epinion DarkBlue"
+                        secondary = NULL, # "Epinion WarmSand"
                         reverse = FALSE,
                         ...) {
 
