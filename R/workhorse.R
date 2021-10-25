@@ -65,7 +65,9 @@ epi_pal_d <- function(palette = "main",
       #
       # if (n > 2 && !is.null(secondary)) warning("Argument 'secondary' does not apply with more than two levels and is ignored")
 
-      if (n == 2 && secondary == primary) warning("Same color applied to both primary and secondary category")
+      if (n == 2 && !is.null(primary) && !is.null(secondary) && secondary == primary) {
+        warning("Same color applied to both primary and secondary category")
+      }
 
       if (!is.null(primary) && !primary %in% names(pal)) {
         stop("Provided primary color is not in the Epinion color palette")
