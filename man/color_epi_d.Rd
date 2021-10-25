@@ -6,8 +6,8 @@
 \usage{
 color_epi_d(
   palette = "main",
-  primary = "Epinion DarkBlue",
-  secondary = "Epinion WarmSand",
+  primary = NULL,
+  secondary = NULL,
   reverse = FALSE,
   ...
 )
