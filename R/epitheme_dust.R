@@ -17,6 +17,10 @@ epitheme_dust <- function(legend = TRUE,
                           gridlines = "both",
                           textcolor = "Black") {
 
+  check_theme(legend = legend,
+              gridlines = gridlines,
+              textcolor = textcolor)
+
   p <-
     ggplot2::theme_classic() +
     ggplot2::theme(axis.text.x = element_text(colour = getElement(getcols_epi(), paste0("Epinion ",

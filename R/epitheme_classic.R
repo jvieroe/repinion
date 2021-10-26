@@ -13,9 +13,13 @@
 #' @author Jeppe Vierø
 #' @export
 
-epitheme_classic <- function(legend = TRUE,
+epitheme_dust <- function(legend = TRUE,
                           gridlines = "both",
                           textcolor = "Black") {
+
+  check_theme(legend = legend,
+              gridlines = gridlines,
+              textcolor = textcolor)
 
   p <-
     ggplot2::theme_classic() +
