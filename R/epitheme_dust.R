@@ -18,7 +18,7 @@ epitheme_dust <- function(legend = TRUE,
                           textcolor = "Black") {
 
   p <-
-    ggplot2::theme_minimal() +
+    ggplot2::theme_classic() +
     ggplot2::theme(axis.text.x = element_text(colour = getElement(getcols_epi(), paste0("Epinion ",
                                                                                         textcolor)),
                                               face = "plain",
