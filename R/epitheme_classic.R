@@ -13,9 +13,9 @@
 #' @author Jeppe Vierø
 #' @export
 
-epitheme_dust <- function(legend = TRUE,
-                          gridlines = "both",
-                          textcolor = "Black") {
+epitheme_classic <- function(legend = TRUE,
+                             gridlines = "both",
+                             textcolor = "Black") {
 
   check_theme(legend = legend,
               gridlines = gridlines,
