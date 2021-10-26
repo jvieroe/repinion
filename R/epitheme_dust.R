@@ -2,6 +2,7 @@
 #'
 #' This function applies a theme consistent with the Epinion Corporate Visual Identity (CVI) to your `ggplot2` graphics. Add it to your `ggplot2` syntax for conistent visual outputs.
 #' @param legend a logical value indicating whether a legend is included. Defaults to `FALSE`
+#' @param gridlines whether to include gridlines. Options are `"both"`, `"none"`, `"x"` (for vertical), and `"y"` (for horizontal). Default is `"both"`
 #' @return a CVI compliant plot
 #' @examples
 #' library(tidyverse)
@@ -12,7 +13,7 @@
 #' @export
 
 epitheme_dust <- function(legend = TRUE,
-                             gridlines = "both") {
+                          gridlines = "both") {
 
   p <-
     ggplot2::theme_minimal() +

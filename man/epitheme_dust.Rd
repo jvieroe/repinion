@@ -8,6 +8,8 @@ epitheme_dust(legend = TRUE, gridlines = "both")
 }
 \arguments{
 \item{legend}{a logical value indicating whether a legend is included. Defaults to \code{FALSE}}
+
+\item{gridlines}{whether to include gridlines. Options are \code{"both"}, \code{"none"}, \code{"x"} (for vertical), and \code{"y"} (for horizontal). Default is \code{"both"}}
 }
 \value{
 a CVI compliant plot

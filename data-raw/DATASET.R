@@ -17,7 +17,8 @@ epi_cols <- tibble::tibble(
     "Epinion Green",
     "Epinion LightGreen",
     "Epinion Gold",
-    "Epinion LightGold"),
+    "Epinion LightGold",
+    "Epinion Black"),
   hex_codes = c(
     "#E13C32",
     "#0F283C",
@@ -30,7 +31,8 @@ epi_cols <- tibble::tibble(
     "#004337",
     "#73A89A",
     "#C18022",
-    "#EBC882"
+    "#EBC882",
+    "#000000"
   ))
 
 epi_cols <- tibble::deframe(epi_cols)
