@@ -81,11 +81,11 @@ check_theme <- function(legend,
     stop("Invalid 'legend' argument provided. Must be logical")
   }
 
-  if(gridlines %in% c("both", "none", "x", "y")) {
+  if(!gridlines %in% c("both", "none", "x", "y")) {
     stop("Invalid 'gridlines' argument provided. Must be either 'both', 'none', 'x', or 'y'")
   }
 
-  if(paste0("Epinion ", tt) %in% names(repinion::epi_cols)) {
+  if(!paste0("Epinion ", tt) %in% names(repinion::epi_cols)) {
     stop("Invalid 'textcolor' argument provided. Must be one of repinion::epi_cols (without Epinion prefix)")
   }
 
