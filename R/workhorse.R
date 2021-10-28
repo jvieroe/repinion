@@ -147,9 +147,6 @@ epi_pal_d2 <- function(palette = "main",
                secondary = secondary,
                reverse = reverse)
 
-  primary <- paste0("Epinion ", primary)
-  secondary <- paste0("Epinion ", secondary)
-
   pal <- epipal_d[[palette]]
 
   #stopifnot(primary %in% names(pal))
@@ -171,6 +168,9 @@ epi_pal_d2 <- function(palette = "main",
       if (!is.null(secondary) && !secondary %in% names(pal)) {
         stop("Provided secondary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
       }
+
+      primary <- paste0("Epinion ", primary)
+      secondary <- paste0("Epinion ", secondary)
 
       secondary <- if (!secondary %in% names(pal)) {
 
