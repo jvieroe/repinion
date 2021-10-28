@@ -42,12 +42,11 @@ library(tidyverse)
 ggplot(mtcars, aes(x = wt,
                    y = mpg,
                    color = factor(am))) +
-  geom_point(size = 4,
+  geom_point(size = 5,
              alpha = .95) +
   epitheme_classic(legend = T,
                    gridlines = "both") +
   color_epi_d()
 
-## basic example code
 ```
 
