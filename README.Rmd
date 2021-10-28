@@ -22,16 +22,7 @@ knitr::opts_chunk$set(
 
 The goal of repinion is to provide Epinion employees with `ggplot2` functionality that quickly and easily makes your graphs compliant with the Corporate Visual Identity (CVI).
 
-## Installation
-
-You can install the development version from [GitHub](https://github.com/) with:
-
-``` r
-if(!require("devtools")) install.packages("devtools")
-library(devtools)
-devtools::install_github("jvieroe/repinion")
-```
-## Example
+## Quick example
 
 This is a basic example which shows you how to solve a common problem:
 
@@ -44,9 +35,134 @@ ggplot(mtcars, aes(x = wt,
                    color = factor(am))) +
   geom_point(size = 5,
              alpha = .95) +
-  epitheme_classic(legend = T,
-                   gridlines = "both") +
+  epitheme_classic() +
   color_epi_d()
+
+```
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+if(!require("devtools")) install.packages("devtools")
+library(devtools)
+devtools::install_github("jvieroe/repinion")
+```
+
+## An __Epinion__ `ggplot()` theme
+
+Use `epitheme_*()` to quickly apply a tailormode `ggplot` theme to your graphs and data visualizations. This makes them compliant with the company CVI and serves as a time-saver, especially when producing numerous plots. At the moment, only one Epinion theme exists: `epitheme_classic()`.
+
+`epitheme_classic()` takes three arguments as inputs:
+
+* `legend`, specifying whether to include a legend
+* `gridlines`, specifying whether to include horizontal and/or vertical gridlines
+* `textcolor`, for specifying text color applied to theme text (axis labels, axis titles etc.)
+
+```{r warning=F, message=F}
+ggplot(mtcars, aes(x = wt,
+                   y = mpg,
+                   color = factor(am))) +
+  geom_point(size = 5,
+             alpha = .95) +
+  epitheme_classic(legend = T,
+                   gridlines = "both")
+
+```
+
+Evidently, `epitheme_classic()` only impacts `ggplot2::theme()` elements and not the aesthetics of your actual plot. We can override `theme()` elements inherent to `repinion::epitheme_classic()` by specifying this __afterwards__:
+
+```{r warning=F, message=F}
+ggplot(mtcars, aes(x = wt,
+                   y = mpg,
+                   color = factor(am))) +
+  geom_point(size = 5,
+             alpha = .95) +
+  epitheme_classic() +
+  theme(legend.position = "right")
+
+```
+
+`epitheme_classic()` only impacts `ggplot2::theme()` elements and not the aesthetics of your actual plot.
+
+
+## Executing the __Epinion__ color palette 
+
+`repinion` provides easy access to the colors from the Epinion CVI:
+
+```{r warning=F, message=F}
+getcols_epi()
+
+getcols_epi("Epinion DarkBlue")
+
+```
+
+We can use these to manually change our colors, either using the HEX codes provided by `getcols_epi()` or by pasting the names into the `base::getElement()` function:
+
+
+```{r warning=F, message=F}
+library(gridExtra)
+
+p1 <-
+  ggplot(mtcars, aes(x = wt,
+                   y = mpg,
+                   color = factor(am))) +
+  geom_point(size = 5,
+             alpha = .95) +
+  epitheme_classic(legend = F) +
+  scale_color_manual(values = c("#0F283C",
+                                "#E8E1D5"))
+
+p2 <-
+  ggplot(mtcars, aes(x = wt,
+                   y = mpg,
+                   color = factor(am))) +
+  geom_point(size = 5,
+             alpha = .95) +
+  epitheme_classic(legend = F) +
+  scale_color_manual(values = c(getElement(getcols_epi(), "Epinion DarkBlue"),
+                                getElement(getcols_epi(), "Epinion WarmSand")))
+
+
+grid.arrange(
+  p1, p2,
+  ncol = 2
+  )
+
+```
+
+`repinion` also allows you to apply the Epinion color palette directly by calling `color_epi_*` or `fill_epi_*`. This can be applied to both continuous and discrete variables:
+
+* ```color_epi_d```: to use with the ```aes(color = x)```, where x is a ```factor``` or ```character``` variable
+* ```color_epi_c```: to use with the ```aes(color = x)```, where x is a ```numeric``` or ```integer``` variable
+* ```fill_epi_d```: to use with the ```aes(fill = x)```, where x is a ```factor``` or ```character``` variable
+* ```fill_epi_c```: to use with the ```aes(fill = x)```, where x is a ```numeric``` or ```integer``` variable
+
+```{r warning=F, message=F}
+p1 <- ggplot(mtcars, aes(x = wt,
+                   y = mpg,
+                   color = factor(am))) +
+  geom_point(size = 5,
+             alpha = .95) +
+  epitheme_classic(legend = F) +
+  color_epi_d()
+
+p2 <- ggplot(mtcars, aes(x = wt,
+                   y = mpg,
+                   fill = disp)) +
+  geom_point(size = 5,
+             shape = 21,
+             color = "NA",
+             alpha = .95) +
+  epitheme_classic(legend = F) +
+  fill_epi_c()
+
+grid.arrange(
+  p1, p2,
+  ncol = 2
+  )
+
 
 ```
 
