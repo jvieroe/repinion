@@ -129,14 +129,16 @@ p2 <-
 grid.arrange(
   p1, p2,
   ncol = 2
-  )
+  ) ; rm(p1, p2)
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="75%" style="display: block; margin: auto;" />
 
-`repinion` also allows you to apply the Epinion color palette directly
-by calling `color_epi_*` or `fill_epi_*`. This can be applied to both
-continuous and discrete variables:
+## Applying the color palette directly
+
+`repinion` also allows you to apply the Epinion color palette in more
+verbose fashion by calling `color_epi_*` or `fill_epi_*`. This can be
+applied to both continuous and discrete variables:
 
   - `color_epi_d`: to use with the `aes(color = x)`, where x is a
     `factor` or `character` variable
@@ -171,7 +173,7 @@ p2 <- ggplot(mtcars, aes(x = wt,
 grid.arrange(
   p1, p2,
   ncol = 2
-  )
+  ) ; rm(p1, p2)
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="75%" style="display: block; margin: auto;" />
