@@ -92,7 +92,7 @@ check_theme <- function(legend,
     stop("Invalid 'gridlines' argument provided. Must be either 'both', 'none', 'x', or 'y'")
   }
 
-  if(!paste0("Epinion ", textcolor) %in% c(names(repinion::epi_cols), "black")) {
+  if(!paste0("Epinion ", textcolor) %in% c(names(repinion::epi_cols), "Epinion black")) {
     stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of repinion::epi_cols (without Epinion prefix)")
   }
 
