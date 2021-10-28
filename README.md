@@ -158,12 +158,12 @@ The main argument taken by all four functions is `reverse` which allows
 you to reverse the order of the color scale (default is `FALSE`)
 
 ``` r
-p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
+p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F) +
   color_epi_d()
 
-p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
+p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F) +
   color_epi_d(reverse = T)
@@ -178,7 +178,7 @@ p4 <- ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
   epitheme_classic(legend = F, gridlines = "y") +
   fill_epi_c(reverse = T)
 
-grid.arrange(p1, p2, p3, p4, ncol = 2) ; rm(p1, p2)
+grid.arrange(p1, p2, p3, p4, ncol = 2) ; rm(p1, p2, p3, p4)
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="85%" style="display: block; margin: auto;" />
