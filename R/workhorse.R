@@ -78,7 +78,7 @@ epi_pal_d <- function(palette = "main",
       #                         secondary = secondary)
 
       if (is.null(secondary)) {
-        stop("No secondary color provided with no default when primary color is provided")
+        stop("No secondary color provided with no default")
       }
 
       if (secondary == primary) warning("Same color applied to both primary and secondary category")
@@ -108,13 +108,14 @@ epi_pal_d <- function(palette = "main",
 
     } else {
 
-      if (is.null(primary) && !is.null(secondary)){
-        stop("No primary color provided with no default when secondary color is provided")
-      }
 
       if (n > 2 && !is.null(primary)) warning("Argument 'primary' does not apply with more than two levels and is ignored")
 
       if (n > 2 && !is.null(secondary)) warning("Argument 'secondary' does not apply with more than two levels and is ignored")
+
+      if (is.null(primary) && !is.null(secondary)){
+        stop("No primary color provided with no default")
+      }
 
       color_list <- pal[1:n]
 
