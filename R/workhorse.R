@@ -41,11 +41,11 @@ epi_pal_d <- function(palette = "main",
     if (n == 2 && secondary == primary) warning("Same color applied to both primary and secondary category")
 
     if (!is.null(primary) && !primary %in% names(pal)) {
-      stop("Provided primary color is not in the Epinion color palette")
+      stop("Provided primary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
     }
 
     if (!is.null(secondary) && !secondary %in% names(pal)) {
-      stop("Provided secondary color is not in the Epinion color palette")
+      stop("Provided secondary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
     }
 
     if (n > 12) warning("The discrete color palette only has 12 colors.")
@@ -92,8 +92,8 @@ check_theme <- function(legend,
     stop("Invalid 'gridlines' argument provided. Must be either 'both', 'none', 'x', or 'y'")
   }
 
-  if(!paste0("Epinion ", textcolor) %in% names(repinion::epi_cols)) {
-    stop("Invalid 'textcolor' argument provided. Must be one of repinion::epi_cols (without Epinion prefix)")
+  if(!paste0("Epinion ", textcolor) %in% c(names(repinion::epi_cols), "black")) {
+    stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of repinion::epi_cols (without Epinion prefix)")
   }
 
 }
@@ -109,11 +109,11 @@ check_col_d <- function(primary,
   }
 
   if(!paste0("Epinion ", primary) %in% names(repinion::epi_cols)) {
-    stop("Invalid 'primary' argument provided. Must be one of repinion::epi_cols (without Epinion prefix)")
+    stop("Provided 'primary' color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
   }
 
   if(!paste0("Epinion ", secondary) %in% names(repinion::epi_cols)) {
-    stop("Invalid 'secondary' argument provided. Must be one of repinion::epi_cols (without Epinion prefix)")
+    stop("Provided 'secondary' color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
   }
 
 }
