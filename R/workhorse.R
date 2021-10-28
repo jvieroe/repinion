@@ -15,9 +15,15 @@ epi_pal_c <- function(palette = "epiblue",
 
 #' @noRd
 epi_pal_d <- function(palette = "main",
-                      primary = "Epinion DarkBlue",
-                      secondary = "Epinion WarmSand",
+                      primary = "DarkBlue",
+                      secondary = "WarmSand",
                       reverse = FALSE) {
+
+  check_col_d(primary = primary,
+              secondary = secondary)
+
+  primary <- paste0("Epinion ", primary)
+  secondary <- paste0("Epinion ", secondary)
 
   pal <- epipal_d[[palette]]
 
@@ -90,3 +96,25 @@ check_theme <- function(legend,
   }
 
 }
+
+
+#' @noRd
+check_col_d <- function(palette,
+                        primary,
+                        secondary,
+                        reverse) {
+
+  if(!reverse %in% c(TRUE, FALSE)) {
+    stop("Invalid 'reverse' argument provided. Must be logical")
+  }
+
+  if(!paste0("Epinion ", primary) %in% names(repinion::epi_cols)) {
+    stop("Invalid 'primary' argument provided. Must be one of repinion::epi_cols (without Epinion prefix)")
+  }
+
+  if(!paste0("Epinion ", secondary) %in% names(repinion::epi_cols)) {
+    stop("Invalid 'secondary' argument provided. Must be one of repinion::epi_cols (without Epinion prefix)")
+  }
+
+}
+
