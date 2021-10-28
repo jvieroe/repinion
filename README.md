@@ -34,7 +34,7 @@ ggplot(mtcars, aes(x = wt,
                    y = mpg,
                    color = factor(am))) +
   geom_point(size = 4,
-             alpha = .85) +
+             alpha = .95) +
   epitheme_classic(legend = T,
                    gridlines = "both") +
   color_epi_d()
