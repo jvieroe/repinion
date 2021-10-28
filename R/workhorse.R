@@ -118,3 +118,71 @@ check_col_d <- function(primary,
 
 }
 
+
+#' @noRd
+epi_pal_d2 <- function(palette = "main",
+                       primary = NULL,
+                       secondary = NULL,
+                       reverse = FALSE) {
+
+
+  primary <- paste0("Epinion ", primary)
+  secondary <- paste0("Epinion ", secondary)
+
+  pal <- epipal_d[[palette]]
+
+  #stopifnot(primary %in% names(pal))
+
+  #print(names(pal))
+
+  function(n) {
+
+    if (n > 12) warning("The discrete color palette only has 12 colors.")
+
+    if (n == 2 && !is.null(secondary) && !is.null(primary)) {
+
+      check_col_d(primary = primary,
+                  secondary = secondary,
+                  reverse = reverse)
+
+      if (secondary == primary) warning("Same color applied to both primary and secondary category")
+
+      if (!is.null(primary) && !primary %in% names(pal)) {
+        stop("Provided primary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
+      }
+
+      if (!is.null(secondary) && !secondary %in% names(pal)) {
+        stop("Provided secondary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
+      }
+
+      secondary <- if (!secondary %in% names(pal)) {
+
+        secondary
+
+      } else {
+
+        pal[secondary]
+
+      }
+
+      color_list <- c(secondary, pal[primary])
+
+    } else {
+
+      if (n > 2 && !is.null(primary)) warning("Argument 'primary' does not apply with more than two levels and is ignored")
+
+      if (n > 2 && !is.null(secondary)) warning("Argument 'secondary' does not apply with more than two levels and is ignored")
+
+      color_list <- pal[1:n]
+
+    }
+
+    color_list <- unname(unlist(color_list))
+
+    if (reverse == FALSE) color_list else rev(color_list)
+
+  }
+
+}
+
+
