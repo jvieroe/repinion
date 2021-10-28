@@ -161,11 +161,11 @@ epi_pal_d2 <- function(palette = "main",
 
       if (secondary == primary) warning("Same color applied to both primary and secondary category")
 
-      if (!is.null(primary) && !primary %in% names(pal)) {
+      if (!is.null(primary) && !paste0("Epinion ", primary) %in% names(pal)) {
         stop("Provided primary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
       }
 
-      if (!is.null(secondary) && !secondary %in% names(pal)) {
+      if (!is.null(secondary) && !paste0("Epinion ", secondary) %in% names(pal)) {
         stop("Provided secondary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
       }
 
