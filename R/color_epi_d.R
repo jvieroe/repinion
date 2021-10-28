@@ -28,8 +28,7 @@ color_epi_d <- function(palette = "main",
 
 }
 
-#' @rdname
-#' color_epi_d
+#' @rdname color_epi_d
 #' @export
 
 colour_epi_d <- color_epi_d

@@ -152,3 +152,20 @@ check_primary_secondary <- function(primary,
 }
 
 
+
+#' @noRd
+check_col_c <- function(palette,
+                        reverse) {
+
+  if(!reverse %in% c(TRUE, FALSE)) {
+    stop("Invalid 'reverse' argument provided. Must be logical")
+  }
+
+  if(!palette %in% names(repinion::epipal_c)) {
+    stop("Invalid 'palette' argument provided. Must be one of repinion::epipal_c")
+  }
+
+}
+
+
+

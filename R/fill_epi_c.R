@@ -11,23 +11,16 @@
 #' @author Jeppe Vierø
 #' @export
 
-color_epi_c <- function(palette = "epiblue",
-                        reverse = FALSE,
-                        ...) {
+fill_epi_c <- function(palette = "epiblue",
+                       reverse = FALSE,
+                       ...) {
 
   check_col_c(palette = palette,
               reverse = reverse)
 
   pal <- epi_pal_c(palette = palette, reverse = reverse)
 
-  scale_color_gradientn(colours = pal(256), ...)
+  scale_fill_gradientn(colours = pal(256), ...)
 
 
 }
-
-
-
-#' @rdname color_epi_c
-#' @export
-
-colour_epi_c <- color_epi_c
