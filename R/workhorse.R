@@ -74,22 +74,22 @@ epi_pal_d <- function(palette = "main",
 
     if (n == 2 && !is.null(primary)) {
 
-      check_primary_secondary(primary = primary,
-                              secondary = secondary)
+      # check_primary_secondary(primary = primary,
+      #                         secondary = secondary)
 
-      # if (is.null(secondary)) {
-      #   stop("No secondary color provided with no default when primary color is provided")
-      # }
-      #
-      # if (secondary == primary) warning("Same color applied to both primary and secondary category")
-      #
-      # if (!paste0("Epinion ", primary) %in% names(pal)) {
-      #   stop("Provided primary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
-      # }
-      #
-      # if (!paste0("Epinion ", secondary) %in% names(pal)) {
-      #   stop("Provided secondary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
-      # }
+      if (is.null(secondary)) {
+        stop("No secondary color provided with no default when primary color is provided")
+      }
+
+      if (secondary == primary) warning("Same color applied to both primary and secondary category")
+
+      if (!paste0("Epinion ", primary) %in% names(pal)) {
+        stop("Provided primary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
+      }
+
+      if (!paste0("Epinion ", secondary) %in% names(pal)) {
+        stop("Provided secondary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
+      }
 
       primary <- paste0("Epinion ", primary)
       secondary <- paste0("Epinion ", secondary)
