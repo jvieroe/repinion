@@ -20,7 +20,8 @@ epi_pal_d <- function(palette = "main",
                       reverse = FALSE) {
 
   check_col_d(primary = primary,
-              secondary = secondary)
+              secondary = secondary,
+              reverse = reverse)
 
   primary <- paste0("Epinion ", primary)
   secondary <- paste0("Epinion ", secondary)
