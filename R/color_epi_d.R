@@ -14,8 +14,8 @@
 #' @export
 
 color_epi_d <- function(palette = "main",
-                        primary = "DarkBlue",
-                        secondary = "WarmSand",
+                        primary = NULL,
+                        secondary = NULL,
                         reverse = FALSE,
                         ...) {
 
