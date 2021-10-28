@@ -71,18 +71,7 @@ ggplot(mtcars, aes(x = wt,
 
 ```
 
-Evidently, `epitheme_classic()` only impacts `ggplot2::theme()` elements and not the aesthetics of your actual plot. We can override `theme()` elements inherent to `repinion::epitheme_classic()` by specifying this __afterwards__:
-
-```{r warning=F, message=F}
-ggplot(mtcars, aes(x = wt,
-                   y = mpg,
-                   color = factor(am))) +
-  geom_point(size = 5,
-             alpha = .95) +
-  epitheme_classic() +
-  theme(legend.position = "right")
-
-```
+Evidently, `epitheme_classic()` only impacts `ggplot2::theme()` elements and not the aesthetics of your actual plot. We can override `theme()` elements inherent to `repinion::epitheme_classic()` by specifying this __afterwards__ in `theme(...)`.
 
 `epitheme_classic()` only impacts `ggplot2::theme()` elements and not the aesthetics of your actual plot.
 

@@ -74,19 +74,7 @@ ggplot(mtcars, aes(x = wt,
 Evidently, `epitheme_classic()` only impacts `ggplot2::theme()` elements
 and not the aesthetics of your actual plot. We can override `theme()`
 elements inherent to `repinion::epitheme_classic()` by specifying this
-**afterwards**:
-
-``` r
-ggplot(mtcars, aes(x = wt,
-                   y = mpg,
-                   color = factor(am))) +
-  geom_point(size = 5,
-             alpha = .95) +
-  epitheme_classic() +
-  theme(legend.position = "right")
-```
-
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="75%" style="display: block; margin: auto;" />
+**afterwards** in `theme(...)`.
 
 `epitheme_classic()` only impacts `ggplot2::theme()` elements and not
 the aesthetics of your actual plot.
@@ -144,7 +132,7 @@ grid.arrange(
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="75%" style="display: block; margin: auto;" />
 
 `repinion` also allows you to apply the Epinion color palette directly
 by calling `color_epi_*` or `fill_epi_*`. This can be applied to both
@@ -186,4 +174,4 @@ grid.arrange(
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="75%" style="display: block; margin: auto;" />
