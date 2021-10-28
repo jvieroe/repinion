@@ -11,7 +11,7 @@ epitheme_classic(legend = TRUE, gridlines = "both", textcolor = "black")
 
 \item{gridlines}{Include gridlines? Options are \code{"both"}, \code{"none"}, \code{"x"} (for vertical), and \code{"y"} (for horizontal). Default is \code{"both"}}
 
-\item{textcolor}{Color for text elements in \code{theme()} aesthetics. A named color from the Epinion color palette (see \link[repinion]{getcols_epi}). Include only the color name, not the \code{"Epinion"} prefix. Default is "Black"}
+\item{textcolor}{Color for text elements in \code{theme()} aesthetics. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), include only the color name, not the \code{"Epinion"} prefix. Default is "black"}
 }
 \value{
 a CVI compliant plot
