@@ -185,13 +185,14 @@ grid.arrange(p1, p2, p3, p4, ncol = 2) ; rm(p1, p2)
 
 #### Additional options: `*_epi_d()`
 
-When mapping `color_epi_d()` or `fill_epi_d()` to a variable with **only
-two levels**, you can manually choose colors with the `primary` and
-`secondary` arguments
+  - When mapping `color_epi_d()` or `fill_epi_d()` to a variable with
+    **only two levels**, you can manually choose colors with the
+    `primary` and `secondary` arguments
 
 #### Additional options: `*_epi_c()`
 
-`repinion` contains six different continuous color palettes: `epiblue`,
-`epipurple`, `epigreen`, `epigold`, `epiredblue`, and `epidarkblue`. You
-choose between these with the `palette` option in `color_epi_c()` and
-`fill_epi_c()`
+  - `repinion` contains six different continuous color palettes:
+    `epiblue`, `epipurple`, `epigreen`, `epigold`, `epiredblue`, and
+    `epidarkblue`.
+  - You choose between these with the `palette` option in
+    `color_epi_c()` and `fill_epi_c()`
