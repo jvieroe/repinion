@@ -100,8 +100,7 @@ check_theme <- function(legend,
 
 
 #' @noRd
-check_col_d <- function(palette,
-                        primary,
+check_col_d <- function(primary,
                         secondary,
                         reverse) {
 
