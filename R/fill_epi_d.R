@@ -13,23 +13,17 @@
 #' @author Jeppe Vierø
 #' @export
 
-color_epi_d <- function(palette = "main",
-                        primary = NULL,
-                        secondary = NULL,
-                        reverse = FALSE,
-                        ...) {
+fill_epi_d <- function(palette = "main",
+                       primary = NULL,
+                       secondary = NULL,
+                       reverse = FALSE,
+                       ...) {
 
   ggplot2::discrete_scale(
-    "colour", "branded",
+    "fill", "branded",
     epi_pal_d(palette, primary, secondary, reverse),
     ...
 
   )
 
 }
-
-#' @rdname
-#' color_epi_d
-#' @export
-
-colour_epi_d <- color_epi_d

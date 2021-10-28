@@ -2,6 +2,8 @@
 
 export(color_epi_c)
 export(color_epi_d)
+export(colour_epi_d)
 export(epitheme_classic)
 export(epitheme_dust)
+export(fill_epi_d)
 export(getcols_epi)
