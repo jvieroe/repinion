@@ -7,7 +7,7 @@
 epitheme_dust(legend = TRUE, gridlines = "none", textcolor = "DarkBlue")
 }
 \arguments{
-\item{legend}{a logical value indicating whether a legend is included. Defaults to \code{FALSE}}
+\item{legend}{a logical value indicating whether a legend is included. Defaults to \code{TRUE} (with \code{legend.position} defaulting to \code{"bottom"})}
 
 \item{gridlines}{Include gridlines? Options are \code{"both"}, \code{"none"}, \code{"x"} (for vertical), and \code{"y"} (for horizontal). Default is \code{"both"}}
 

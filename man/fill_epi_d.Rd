@@ -26,9 +26,9 @@ This function applies a discrete color scale using colors from the Epinion color
 }
 \examples{
 library(tidyverse)
-ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
-geom_point() +
-color_epi_d()
+ggplot(mtcars, aes(x = wt, y = mpg, fill = factor(am))) +
+geom_point(shape = 21, color = "NA") +
+fill_epi_d()
 }
 \author{
 Jeppe Vierø

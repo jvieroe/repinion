@@ -62,7 +62,15 @@ epitheme_classic <- function(legend = TRUE,
                                              size = 18),
                    plot.subtitle = element_text(colour = theme_textcolor,
                                                 face = "plain",
-                                                size = 16)
+                                                size = 16),
+                   axis.ticks.x = element_blank(),
+                   axis.ticks.y = element_blank(),
+                   panel.background = element_rect(fill = "transparent"),
+                   plot.background = element_rect(fill = "transparent", color = NA),
+                   #panel.grid.major = element_blank(),
+                   #panel.grid.minor = element_blank(),
+                   legend.background = element_rect(fill = "transparent"),
+                   legend.box.background = element_rect(fill = "transparent")
     )
 
 

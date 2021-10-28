@@ -13,7 +13,7 @@ getcols_epi(...)
 the corresponding HEX code
 }
 \description{
-This function extract colors (in HEX codes) from the Epinion color palette by their official name
+This function extracts colors (in HEX codes) from the Epinion color palette by their official name
 }
 \author{
 Jeppe Vierø
