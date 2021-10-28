@@ -15,11 +15,22 @@
 
 epitheme_classic <- function(legend = TRUE,
                              gridlines = "both",
-                             textcolor = "Black") {
+                             textcolor = "black") {
 
   check_theme(legend = legend,
               gridlines = gridlines,
               textcolor = textcolor)
+
+  if (textcolor == "black") {
+
+    theme_textcolor <- "black"
+
+  } else if (textcolor != "black") {
+
+    theme_textcolor <- getElement(getcols_epi(), paste0("Epinion ",
+                                                        textcolor))
+
+  }
 
   p <-
     ggplot2::theme_classic() +
