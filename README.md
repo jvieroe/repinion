@@ -33,7 +33,7 @@ library(tidyverse)
 ggplot(mtcars, aes(x = wt,
                    y = mpg,
                    color = factor(am))) +
-  geom_point(size = 4,
+  geom_point(size = 5,
              alpha = .95) +
   epitheme_classic(legend = T,
                    gridlines = "both") +
@@ -41,7 +41,3 @@ ggplot(mtcars, aes(x = wt,
 ```
 
 <img src="man/figures/README-example-1.png" width="75%" style="display: block; margin: auto;" />
-
-``` r
-## basic example code
-```
