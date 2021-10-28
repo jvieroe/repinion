@@ -5,9 +5,9 @@
 #' @param reverse A logical value indicating whether to reverse the color scale. Defaults to `FALSE`
 #' @examples
 #' library(tidyverse)
-#' ggplot(mtcars, aes(x = wt, y = mpg, color = disp)) +
-#' geom_point() +
-#' color_epi_c()
+#' ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
+#' geom_point(shape = 21, color = "NA") +
+#' fill_epi_c()
 #' @author Jeppe Vierø
 #' @export
 

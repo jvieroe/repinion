@@ -7,9 +7,9 @@
 #' @param secondary a name of a valid Epinion color (see \link[repinion]{getcols_epi}) to be applied to the primary category. Invalid with more than three levels
 #' @examples
 #' library(tidyverse)
-#' ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
-#' geom_point() +
-#' color_epi_d()
+#' ggplot(mtcars, aes(x = wt, y = mpg, fill = factor(am))) +
+#' geom_point(shape = 21, color = "NA") +
+#' fill_epi_d()
 #' @author Jeppe Vierø
 #' @export
 
