@@ -14,72 +14,6 @@ epi_pal_c <- function(palette = "epiblue",
 
 
 #' @noRd
-epi_pal_d <- function(palette = "main",
-                      primary = "DarkBlue",
-                      secondary = "WarmSand",
-                      reverse = FALSE) {
-
-  check_col_d(primary = primary,
-              secondary = secondary,
-              reverse = reverse)
-
-  primary <- paste0("Epinion ", primary)
-  secondary <- paste0("Epinion ", secondary)
-
-  pal <- epipal_d[[palette]]
-
-  #stopifnot(primary %in% names(pal))
-
-  #print(names(pal))
-
-  function(n) {
-
-    if (n > 2 && !is.null(primary)) warning("Argument 'primary' does not apply with more than two levels and is ignored")
-
-    if (n > 2 && !is.null(secondary)) warning("Argument 'secondary' does not apply with more than two levels and is ignored")
-
-    if (n == 2 && secondary == primary) warning("Same color applied to both primary and secondary category")
-
-    if (!is.null(primary) && !primary %in% names(pal)) {
-      stop("Provided primary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
-    }
-
-    if (!is.null(secondary) && !secondary %in% names(pal)) {
-      stop("Provided secondary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
-    }
-
-    if (n > 12) warning("The discrete color palette only has 12 colors.")
-
-    if (n == 2) {
-
-      secondary <- if (!secondary %in% names(pal)) {
-
-        secondary
-
-      } else {
-
-        pal[secondary]
-
-      }
-
-      color_list <- c(secondary, pal[primary])
-
-    } else {
-
-      color_list <- pal[1:n]
-
-    }
-
-    color_list <- unname(unlist(color_list))
-
-    if (reverse == FALSE) color_list else rev(color_list)
-
-  }
-
-}
-
-
-#' @noRd
 check_theme <- function(legend,
                         gridlines,
                         textcolor) {
@@ -108,25 +42,6 @@ check_col_d <- function(primary,
     stop("Invalid 'reverse' argument provided. Must be logical")
   }
 
-  if(!paste0("Epinion ", primary) %in% names(repinion::epi_cols)) {
-    stop("Provided 'primary' color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
-  }
-
-  if(!paste0("Epinion ", secondary) %in% names(repinion::epi_cols)) {
-    stop("Provided 'secondary' color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
-  }
-
-}
-
-#' @noRd
-check_col_d2 <- function(primary,
-                         secondary,
-                         reverse) {
-
-  if(!reverse %in% c(TRUE, FALSE)) {
-    stop("Invalid 'reverse' argument provided. Must be logical")
-  }
-
   if(!is.null(primary) && !paste0("Epinion ", primary) %in% names(repinion::epi_cols)) {
     stop("Provided 'primary' color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
   }
@@ -138,14 +53,14 @@ check_col_d2 <- function(primary,
 }
 
 #' @noRd
-epi_pal_d2 <- function(palette = "main",
-                       primary = NULL,
-                       secondary = NULL,
-                       reverse = FALSE) {
+epi_pal_d <- function(palette = "main",
+                      primary = NULL,
+                      secondary = NULL,
+                      reverse = FALSE) {
 
-  check_col_d2(primary = primary,
-               secondary = secondary,
-               reverse = reverse)
+  check_col_d(primary = primary,
+              secondary = secondary,
+              reverse = reverse)
 
   pal <- epipal_d[[palette]]
 
@@ -159,19 +74,22 @@ epi_pal_d2 <- function(palette = "main",
 
     if (n == 2 && !is.null(primary)) {
 
-      if (is.null(secondary)) {
-        stop("No secondary color provided with no default when primary color is provided")
-      }
+      check_primary_secondary(primary = primary,
+                              secondary = secondary)
 
-      if (secondary == primary) warning("Same color applied to both primary and secondary category")
-
-      if (!paste0("Epinion ", primary) %in% names(pal)) {
-        stop("Provided primary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
-      }
-
-      if (!paste0("Epinion ", secondary) %in% names(pal)) {
-        stop("Provided secondary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
-      }
+      # if (is.null(secondary)) {
+      #   stop("No secondary color provided with no default when primary color is provided")
+      # }
+      #
+      # if (secondary == primary) warning("Same color applied to both primary and secondary category")
+      #
+      # if (!paste0("Epinion ", primary) %in% names(pal)) {
+      #   stop("Provided primary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
+      # }
+      #
+      # if (!paste0("Epinion ", secondary) %in% names(pal)) {
+      #   stop("Provided secondary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
+      # }
 
       primary <- paste0("Epinion ", primary)
       secondary <- paste0("Epinion ", secondary)
@@ -202,6 +120,27 @@ epi_pal_d2 <- function(palette = "main",
 
     if (reverse == FALSE) color_list else rev(color_list)
 
+  }
+
+}
+
+
+#' @noRd
+check_primary_secondary <- function(primary,
+                                    secondary) {
+
+  if (is.null(secondary)) {
+    stop("No secondary color provided with no default when primary color is provided")
+  }
+
+  if (secondary == primary) warning("Same color applied to both primary and secondary category")
+
+  if (!paste0("Epinion ", primary) %in% names(pal)) {
+    stop("Provided primary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
+  }
+
+  if (!paste0("Epinion ", secondary) %in% names(pal)) {
+    stop("Provided secondary color is not in the Epinion color palette. Must be one of repinion::epi_cols (without Epinion prefix)")
   }
 
 }
