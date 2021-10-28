@@ -4,7 +4,7 @@
 \alias{epitheme_classic}
 \title{Apply an Epinion styled theme to your \code{ggplot2} graphics}
 \usage{
-epitheme_classic(legend = TRUE, gridlines = "both", textcolor = "black")
+epitheme_classic(legend = TRUE, gridlines = "none", textcolor = "DarkBlue")
 }
 \arguments{
 \item{legend}{a logical value indicating whether a legend is included. Defaults to \code{FALSE}}

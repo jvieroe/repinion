@@ -14,8 +14,8 @@
 #' @export
 
 epitheme_classic <- function(legend = TRUE,
-                             gridlines = "both",
-                             textcolor = "black") {
+                             gridlines = "none",
+                             textcolor = "DarkBlue") {
 
   check_theme(legend = legend,
               gridlines = gridlines,
@@ -42,13 +42,13 @@ epitheme_classic <- function(legend = TRUE,
                                               size = 12),
                    axis.title.x = element_text(colour = theme_textcolor,
                                                face = "bold",
-                                               size = 14,
+                                               size = 12,
                                                #vjust = -2.5,
                                                hjust = 1,
                                                margin = ggplot2::margin(t = 20, r = 0, b = 0, l = 0)),
                    axis.title.y = element_text(colour = theme_textcolor,
                                                face = "bold",
-                                               size = 14,
+                                               size = 12,
                                                #vjust = 2.5,
                                                hjust = 1,
                                                margin = ggplot2::margin(t = 0, r = 20, b = 0, l = 0)),
@@ -69,7 +69,7 @@ epitheme_classic <- function(legend = TRUE,
   if (legend == TRUE) {
 
     pp <- p +
-      ggplot2::theme(legend.position = "right")
+      ggplot2::theme(legend.position = "bottom")
 
   } else if (legend == FALSE) {
 

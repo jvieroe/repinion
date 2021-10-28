@@ -51,7 +51,11 @@ epipal_c <- list(
 
   `epigreen` = getcols_epi("Epinion WarmSand", "Epinion LightGreen", "Epinion Green"),
 
-  `epigold` = getcols_epi("Epinion WarmSand", "Epinion LightGold", "Epinion Gold")
+  `epigold` = getcols_epi("Epinion WarmSand", "Epinion LightGold", "Epinion Gold"),
+
+  `epiredblue` = getcols_epi("Epinion Red", "Epinion DarkBlue"),
+
+  `epidarkblue` = getcols_epi("Epinion WarmSand", "Epinion DarkBlue")
 
 )
 
