@@ -19,7 +19,7 @@ the Corporate Visual Identity (CVI).
 2.  a set of custom-made color palettes for both discrete and continuous
     variables
 
-A quick example demonstrates the basic functionality:
+<!-- end list -->
 
 ``` r
 library(repinion)

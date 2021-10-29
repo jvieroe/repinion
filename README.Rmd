@@ -29,8 +29,6 @@ The goal of `repinion` is to provide Epinion employees with `ggplot2` functional
 1. a tailor-made `ggplot2` theme
 2. a set of custom-made color palettes for both discrete and continuous variables
 
-A quick example demonstrates the basic functionality:
-
 ```{r example, warning=F, message=F}
 library(repinion)
 library(tidyverse)
