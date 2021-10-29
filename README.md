@@ -15,7 +15,7 @@ the Corporate Visual Identity (CVI).
 
 `repinion` has two main functionalities:
 
-1.  a tailor-made `ggplot2` theme
+1.  tailor-made `ggplot2` themes
 2.  a set of custom-made color palettes for both discrete and continuous
     variables
 
@@ -47,15 +47,17 @@ library(devtools)
 devtools::install_github("jvieroe/repinion")
 ```
 
-## **Epinion** `ggplot()` theme(s)
+## **Epinion** `ggplot()` themes
 
 Use `epitheme_*()` to quickly apply a tailormode `ggplot` theme to your
 graphs and data visualizations. This makes them compliant with the
 company CVI and serves as a time-saver, especially when producing
-numerous plots. At the moment, only one Epinion theme exists:
-`epitheme_classic()`.
+numerous plots. At the moment, two Epinion theme exists:
+`epitheme_classic()`, designed for most visualization purposes, and
+`epitheme_map()`, a very minimalist theme designed with geospatial maps
+in mind.
 
-`epitheme_classic()` takes three arguments as inputs:
+`epitheme_classic()` takes three arguments as inputs.
 
   - `legend`, specifying whether to include a legend
   - `gridlines`, specifying whether to include horizontal and/or
@@ -63,7 +65,8 @@ numerous plots. At the moment, only one Epinion theme exists:
   - `textcolor`, for specifying text color applied to theme text (axis
     labels, axis titles etc.)
 
-<!-- end list -->
+`epitheme_map()` does not take the `gridlines` argument but is otherwise
+functionally similar.
 
 ``` r
 ggplot(mtcars, aes(x = wt,
