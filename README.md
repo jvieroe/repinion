@@ -27,7 +27,7 @@ library(tidyverse)
 
 ggplot(mtcars, aes(x = wt,
                    y = mpg,
-                   color = factor(am))) +
+                   color = factor(carb))) +
   geom_point(size = 5,
              alpha = .95) +
   epitheme_classic() +
