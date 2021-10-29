@@ -21,6 +21,7 @@ epitheme_classic <- function(legend = TRUE,
               gridlines = gridlines,
               textcolor = textcolor)
 
+
   if (textcolor == "black") {
 
     theme_textcolor <- "black"
