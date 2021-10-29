@@ -11,7 +11,7 @@ epitheme_dust(legend = TRUE, gridlines = "none", textcolor = "DarkBlue")
 
 \item{gridlines}{Include gridlines? Options are \code{"both"}, \code{"none"}, \code{"x"} (for vertical), and \code{"y"} (for horizontal). Default is \code{"both"}}
 
-\item{textcolor}{Color for text elements in \code{theme()} aesthetics. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), include only the color name, not the \code{"Epinion"} prefix. Default is "black"}
+\item{textcolor}{Color for text elements in \code{theme()} options. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), include only the color name, not the \code{"Epinion"} prefix. Default is "black"}
 }
 \value{
 a CVI compliant plot
@@ -21,7 +21,7 @@ This function applies a theme consistent with the Epinion Corporate Visual Ident
 }
 \examples{
 library(tidyverse)
-ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
+ggplot(mtcars, aes(x = wt, y = mpg)) +
 geom_point() +
 epitheme_classic()
 }

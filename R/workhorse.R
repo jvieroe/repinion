@@ -32,6 +32,21 @@ check_theme <- function(legend,
 
 }
 
+#' @noRd
+check_theme_map <- function(legend,
+                            textcolor) {
+
+  if(!legend %in% c(TRUE, FALSE)) {
+    stop("Invalid 'legend' argument provided. Must be logical")
+  }
+
+  if(!paste0("Epinion ", textcolor) %in% c(names(repinion::epi_cols), "Epinion black")) {
+    stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (without Epinion prefix)")
+  }
+
+}
+
+
 
 #' @noRd
 check_col_d <- function(primary,
