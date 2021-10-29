@@ -70,8 +70,10 @@ epitheme_classic <- function(legend = TRUE,
                    plot.background = element_rect(fill = "transparent", color = NA),
                    #panel.grid.major = element_blank(),
                    #panel.grid.minor = element_blank(),
-                   legend.background = element_rect(fill = "transparent"),
-                   legend.box.background = element_rect(fill = "transparent")
+                   legend.background = element_rect(color = "transparent",
+                                                    fill = "transparent"),
+                   legend.box.background = element_rect(color = "transparent",
+                                                        fill = "transparent")
     )
 
 
