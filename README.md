@@ -196,3 +196,13 @@ grid.arrange(p1, p2, p3, p4, ncol = 2) ; rm(p1, p2, p3, p4)
     `epidarkblue`.
   - You choose between these with the `palette` option in
     `color_epi_c()` and `fill_epi_c()`
+
+# Acknowledgements
+
+  - The R Core Team for developing and maintaining the language
+  - Hadley Wickham ([hadley](https://github.com/hadley)) and the rest of
+    the team working on the amazing `ggplot2` package (and, frankly, the
+    entire `tidyverse` ecosystem)
+  - Garrick Aden-Buie ([gadenbuie](https://github.com/gadenbuie)) and Dr
+    Simon Jackson ([drsimonj](https://github.com/drsimonj)) for
+    inspiration

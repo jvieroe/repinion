@@ -19,6 +19,8 @@ color_epi_d <- function(palette = "main",
                         reverse = FALSE,
                         ...) {
 
+  # functionality  to highlight selected category with "Epinion Red", add to workhorse.R
+
   ggplot2::discrete_scale(
     "colour", "branded",
     epi_pal_d(palette, primary, secondary, reverse),
