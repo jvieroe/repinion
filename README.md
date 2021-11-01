@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![CodeFactor](https://www.codefactor.io/repository/github/jvieroe/repinion/badge)](https://www.codefactor.io/repository/github/jvieroe/repinion)
 <!-- badges: end -->
 
 The goal of `repinion` is to provide Epinion employees with `ggplot2`
