@@ -8,6 +8,10 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/jvieroe/repinion/badge)](https://www.codefactor.io/repository/github/jvieroe/repinion)
 [![Github All
 Releases](https://img.shields.io/github/downloads/jvieroe/repinion/total.svg)]()
+[![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/repinion)](https://cran.r-project.org/package=repinion)
+
+[![R-CMD-check](https://github.com/jvieroe/repinion/workflows/R-CMD-check/badge.svg)](https://github.com/jvieroe/repinion/actions)
 <!-- badges: end -->
 
 The goal of `repinion` is to provide Epinion employees with `ggplot2`
