@@ -21,6 +21,7 @@ epitheme_dust <- function(legend = TRUE,
               gridlines = gridlines,
               textcolor = textcolor)
 
+
   if (textcolor == "black") {
 
     theme_textcolor <- "black"
@@ -33,7 +34,7 @@ epitheme_dust <- function(legend = TRUE,
   }
 
   p <-
-    ggplot2::theme_classic() +
+    ggplot2::theme_minimal() +
     ggplot2::theme(axis.text.x = element_text(colour = theme_textcolor,
                                               face = "plain",
                                               size = 12),
@@ -62,7 +63,18 @@ epitheme_dust <- function(legend = TRUE,
                                              size = 18),
                    plot.subtitle = element_text(colour = theme_textcolor,
                                                 face = "plain",
-                                                size = 16)
+                                                size = 16),
+                   panel.background = element_rect(element_rect(color = "transparent",
+                                                                fill = scales::alpha(getElement(getcols_epi(), "Epinion WarmSand"),
+                                                                                     1.0))),
+                   plot.background = element_rect(fill = "transparent",
+                                                  color = NA),
+                   #panel.grid.major = element_blank(),
+                   #panel.grid.minor = element_blank(),
+                   legend.background = element_rect(color = "transparent",
+                                                    fill = "transparent"),
+                   legend.box.background = element_rect(color = "transparent",
+                                                        fill = "transparent")
     )
 
 
@@ -116,4 +128,5 @@ epitheme_dust <- function(legend = TRUE,
   return(ppp)
 
 }
+
 
