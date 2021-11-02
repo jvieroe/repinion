@@ -14,7 +14,7 @@
 #' @export
 
 epitheme_dust <- function(legend = TRUE,
-                          gridlines = "none",
+                          gridlines = "both",
                           textcolor = "DarkBlue") {
 
   check_theme(legend = legend,
