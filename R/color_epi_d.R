@@ -11,6 +11,7 @@
 #' geom_point() +
 #' color_epi_d()
 #' @author Jeppe Vierø
+#' @import ggplot2
 #' @export
 
 color_epi_d <- function(palette = "main",

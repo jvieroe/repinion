@@ -9,6 +9,7 @@
 #' geom_point(shape = 21, color = "NA") +
 #' fill_epi_c()
 #' @author Jeppe Vierø
+#' @import ggplot2
 #' @export
 
 fill_epi_c <- function(palette = "epiblue",
@@ -20,7 +21,7 @@ fill_epi_c <- function(palette = "epiblue",
 
   pal <- epi_pal_c(palette = palette, reverse = reverse)
 
-  scale_fill_gradientn(colours = pal(256), ...)
+  ggplot2::scale_fill_gradientn(colours = pal(256), ...)
 
 
 }

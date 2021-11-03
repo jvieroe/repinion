@@ -11,6 +11,7 @@
 #' geom_point(shape = 21, color = "NA") +
 #' fill_epi_d()
 #' @author Jeppe Vierø
+#' @import ggplot2
 #' @export
 
 fill_epi_d <- function(palette = "main",

@@ -11,6 +11,7 @@
 #' geom_point() +
 #' epitheme_classic()
 #' @author Jeppe Vierø
+#' @import ggplot2 scales
 #' @export
 
 epitheme_classic <- function(legend = TRUE,

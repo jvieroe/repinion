@@ -9,6 +9,7 @@
 #' geom_point() +
 #' color_epi_c()
 #' @author Jeppe Vierø
+#' @import ggplot2
 #' @export
 
 color_epi_c <- function(palette = "epiblue",
@@ -20,7 +21,7 @@ color_epi_c <- function(palette = "epiblue",
 
   pal <- epi_pal_c(palette = palette, reverse = reverse)
 
-  scale_color_gradientn(colours = pal(256), ...)
+  ggplot2::scale_color_gradientn(colours = pal(256), ...)
 
 
 }
