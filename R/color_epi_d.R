@@ -25,7 +25,7 @@ color_epi_d <- function(palette = "main",
 
   ggplot2::discrete_scale(
     "colour", "branded",
-    repinion::epi_pal_d(palette, primary, secondary, reverse),
+    epi_pal_d(palette, primary, secondary, reverse),
     ...
 
   )

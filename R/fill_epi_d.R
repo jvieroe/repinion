@@ -23,7 +23,7 @@ fill_epi_d <- function(palette = "main",
 
   ggplot2::discrete_scale(
     "fill", "branded",
-    repinion::epi_pal_d(palette, primary, secondary, reverse),
+    epi_pal_d(palette, primary, secondary, reverse),
     ...
 
   )

@@ -20,7 +20,7 @@ color_epi_c <- function(palette = "epiblue",
   check_col_c(palette = palette,
               reverse = reverse)
 
-  pal <- repinion::epi_pal_c(palette = palette, reverse = reverse)
+  pal <- epi_pal_c(palette = palette, reverse = reverse)
 
   ggplot2::scale_color_gradientn(colours = pal(256), ...)
 
