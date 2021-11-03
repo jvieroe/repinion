@@ -12,8 +12,8 @@ getcols_epi <- function(...) {
 
   if (is.null(cols))
 
-    return (epi_cols)
+    return (repinion::epi_cols)
 
-  epi_cols[cols]
+  repinion::epi_cols[cols]
 
 }

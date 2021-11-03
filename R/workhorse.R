@@ -5,7 +5,7 @@ epi_pal_c <- function(palette = "epiblue",
                       reverse = FALSE,
                       ...) {
 
-  pal <- epipal_c[[palette]]
+  pal <- repinion::epipal_c[[palette]]
 
   if (reverse) pal <- rev(pal)
 
@@ -78,7 +78,7 @@ epi_pal_d <- function(palette = "main",
               secondary = secondary,
               reverse = reverse)
 
-  pal <- epipal_d[[palette]]
+  pal <- repinion::epipal_d[[palette]]
 
   #stopifnot(primary %in% names(pal))
 
