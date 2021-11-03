@@ -29,8 +29,8 @@ epitheme_dust <- function(legend = TRUE,
 
   } else if (textcolor != "black") {
 
-    theme_textcolor <- getElement(getcols_epi(), paste0("Epinion ",
-                                                        textcolor))
+    theme_textcolor <- getElement(repinion::getcols_epi(), paste0("Epinion ",
+                                                                  textcolor))
 
   }
 
@@ -57,8 +57,8 @@ epitheme_dust <- function(legend = TRUE,
                    strip.text = element_text(colour = theme_textcolor,
                                              face = "plain",
                                              size = 11),
-                   strip.background = element_rect(color = getElement(getcols_epi(), "Epinion WarmSand"),
-                                                   fill = scales::alpha(getElement(getcols_epi(), "Epinion WarmSand"), 0.4)),
+                   strip.background = element_rect(color = getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                   fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"), 0.4)),
                    plot.title = element_text(colour = theme_textcolor,
                                              face = "bold",
                                              size = 16),
@@ -66,7 +66,7 @@ epitheme_dust <- function(legend = TRUE,
                                                 face = "plain",
                                                 size = 14),
                    panel.background = element_rect(color = "transparent",
-                                                   fill = scales::alpha(getElement(getcols_epi(), "Epinion WarmSand"),
+                                                   fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
                                                                                      1.0)),
                    plot.background = element_rect(fill = "transparent",
                                                   color = NA),
