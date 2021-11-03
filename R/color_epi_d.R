@@ -5,6 +5,7 @@
 #' @param reverse a logical value indicating whether to reverse the color scale. Defaults to `FALSE`
 #' @param primary a name of a valid Epinion color (see \link[repinion]{getcols_epi}) to be applied to the primary category. Invalid with more than three levels
 #' @param secondary a name of a valid Epinion color (see \link[repinion]{getcols_epi}) to be applied to the primary category. Invalid with more than three levels
+#' @param ... ...
 #' @examples
 #' library(tidyverse)
 #' ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +

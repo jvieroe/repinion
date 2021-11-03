@@ -13,6 +13,8 @@ colour_epi_c(palette = "epiblue", reverse = FALSE, ...)
 \item{palette}{a continuous color palette. Default is "epiblue"}
 
 \item{reverse}{A logical value indicating whether to reverse the color scale. Defaults to \code{FALSE}}
+
+\item{...}{...}
 }
 \description{
 This function applies a continuous color scale using colors from the Epinion color palette
