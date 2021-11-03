@@ -16,15 +16,13 @@ The goal of `repinion` is to provide Epinion employees with `ggplot2`
 functionality that quickly and easily makes your graphs compliant with
 the Corporate Visual Identity (CVI).
 
-## Quick example
-
 `repinion` has two main functionalities:
 
 1.  tailor-made `ggplot2` themes
 2.  a set of custom-made color palettes for both discrete and continuous
     variables
 
-<!-- end list -->
+## Quick example
 
 ``` r
 library(repinion)
