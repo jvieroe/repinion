@@ -1,4 +1,5 @@
 
+#' @import grDevices
 #' @noRd
 epi_pal_c <- function(palette = "epiblue",
                       reverse = FALSE,
@@ -8,7 +9,7 @@ epi_pal_c <- function(palette = "epiblue",
 
   if (reverse) pal <- rev(pal)
 
-  colorRampPalette(pal, ...)
+  grDevices::colorRampPalette(pal, ...)
 
 }
 
