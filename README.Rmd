@@ -87,7 +87,7 @@ ggplot(mtcars, aes(x = wt,
   geom_point(size = 5,
              alpha = .95) +
   epitheme_dust(background = "yes") +
-  color_epi_d(palette = "usered",
+  color_epi_d(palette = "main",
               primary = "Red",
               secondary = "DarkBlue")
 
