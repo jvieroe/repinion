@@ -9,9 +9,12 @@
 [![Github All
 Releases](https://img.shields.io/github/downloads/jvieroe/repinion/total.svg)]()
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/jvieroe/repinion/workflows/R-CMD-check/badge.svg)](https://github.com/jvieroe/repinion/actions)
 [![License: GPL
 (\>= 3)](https://img.shields.io/badge/license-GPL%20\(%3E=%203\)-blue.svg)](https://cran.r-project.org/web/licenses/GPL%20\(%3E=%203\))
+[![](https://img.shields.io/github/last-commit/jvieroe/repinion.svg)](https://github.com/jvieroe/repinion/commits/main)
+
+Master branch status:
+[![R-CMD-check](https://github.com/jvieroe/repinion/workflows/R-CMD-check/badge.svg)](https://github.com/jvieroe/repinion/actions)
 <!-- badges: end -->
 
 The goal of `repinion` is to provide Epinion employees with `ggplot2`
