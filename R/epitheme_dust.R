@@ -4,6 +4,7 @@
 #' @param legend a logical value indicating whether a legend is included. Defaults to `TRUE` (with `legend.position` defaulting to `"bottom"`)
 #' @param gridlines Include gridlines? Options are `"both"`, `"none"`, `"x"` (for vertical), and `"y"` (for horizontal). Default is `"both"`
 #' @param textcolor Color for text elements in `theme()` options. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), include only the color name, not the `"Epinion"` prefix. Default is "black"
+#' @param background Apply the WarmSand color to plot background? Options are "no" and "yes". Default is "no"
 #' @return a CVI compliant plot
 #' @examples
 #' library(tidyverse)
@@ -16,11 +17,13 @@
 
 epitheme_dust <- function(legend = TRUE,
                           gridlines = "both",
-                          textcolor = "DarkBlue") {
+                          textcolor = "DarkBlue",
+                          background = "no") {
 
-  check_theme(legend = legend,
-              gridlines = gridlines,
-              textcolor = textcolor)
+  check_theme_dust(legend = legend,
+                   gridlines = gridlines,
+                   textcolor = textcolor,
+                   background = background)
 
 
   if (textcolor == "black") {
@@ -58,7 +61,8 @@ epitheme_dust <- function(legend = TRUE,
                                              face = "plain",
                                              size = 11),
                    strip.background = element_rect(color = getElement(repinion::getcols_epi(), "Epinion WarmSand"),
-                                                   fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"), 0.4)),
+                                                   fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                                        1.0)),
                    plot.title = element_text(colour = theme_textcolor,
                                              face = "bold",
                                              size = 16),
@@ -67,16 +71,8 @@ epitheme_dust <- function(legend = TRUE,
                                                 size = 14),
                    panel.background = element_rect(color = "transparent",
                                                    fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
-                                                                                     1.0)),
-                   plot.background = element_rect(fill = "transparent",
-                                                  color = NA),
-                   #panel.grid.major = element_blank(),
-                   #panel.grid.minor = element_blank(),
-                   legend.background = element_rect(color = "transparent",
-                                                    fill = "transparent"),
-                   legend.box.background = element_rect(color = "transparent",
-                                                        fill = "transparent")
-    )
+                                                                        1.0))
+                   )
 
 
   if (legend == TRUE) {
@@ -91,10 +87,37 @@ epitheme_dust <- function(legend = TRUE,
 
   }
 
+  if (background == "no") {
+
+    ppp <- pp +
+      ggplot2::theme(plot.background = element_rect(fill = "transparent",
+                                                    color = "transparent"),
+                     legend.background = element_rect(color = "transparent",
+                                                      fill = "transparent"),
+                     legend.box.background = element_rect(color = "transparent",
+                                                          fill = "transparent")
+                     )
+
+  } else if (background == "yes") {
+
+    ppp <- pp +
+      ggplot2::theme(plot.background = element_rect(color = "transparent",
+                                                    fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                                         1.0)),
+                     legend.background = element_rect(color = "transparent",
+                                                      fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                                           1.0)),
+                     legend.box.background = element_rect(color = "transparent",
+                                                          fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                                               1.0))
+      )
+
+  }
+
 
   if (gridlines == "both") {
 
-    ppp <- pp +
+    pppp <- ppp +
       ggplot2::theme(panel.grid.major.x = element_line(),
                      panel.grid.minor.x = element_line(),
                      panel.grid.major.y = element_line(),
@@ -102,7 +125,7 @@ epitheme_dust <- function(legend = TRUE,
 
   } else if (gridlines == "x") {
 
-    ppp <- pp +
+    pppp <- pp +
       ggplot2::theme(panel.grid.major.x = element_line(),
                      panel.grid.minor.x = element_line(),
                      panel.grid.major.y = element_blank(),
@@ -110,7 +133,7 @@ epitheme_dust <- function(legend = TRUE,
 
   } else if (gridlines == "y") {
 
-    ppp <- pp +
+    pppp <- pp +
       ggplot2::theme(panel.grid.major.x = element_blank(),
                      panel.grid.minor.x = element_blank(),
                      panel.grid.major.y = element_line(),
@@ -118,7 +141,7 @@ epitheme_dust <- function(legend = TRUE,
 
   } else if (gridlines == "none") {
 
-    ppp <- pp +
+    pppp <- pp +
       ggplot2::theme(panel.grid.major.x = element_blank(),
                      panel.grid.minor.x = element_blank(),
                      panel.grid.major.y = element_blank(),
@@ -126,7 +149,7 @@ epitheme_dust <- function(legend = TRUE,
 
   }
 
-  return(ppp)
+  return(pppp)
 
 }
 

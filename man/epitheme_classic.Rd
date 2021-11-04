@@ -9,7 +9,7 @@ epitheme_classic(legend = TRUE, gridlines = "none", textcolor = "DarkBlue")
 \arguments{
 \item{legend}{a logical value indicating whether a legend is included. Defaults to \code{TRUE} (with \code{legend.position} defaulting to \code{"bottom"})}
 
-\item{gridlines}{Include gridlines? Options are \code{"both"}, \code{"none"}, \code{"x"} (for vertical), and \code{"y"} (for horizontal). Default is \code{"both"}}
+\item{gridlines}{Include gridlines? Options are \code{"both"}, \code{"none"}, \code{"x"} (for vertical), and \code{"y"} (for horizontal). Default is \code{"none"}}
 
 \item{textcolor}{Color for text elements in \code{theme()} options. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), include only the color name, not the \code{"Epinion"} prefix. Default is "black"}
 }

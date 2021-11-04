@@ -51,7 +51,8 @@ ggplot(mtcars, aes(x = wt,
               size = 1,
               color = getElement(getcols_epi(), "Epinion Red"),
               se = F) +
-  epitheme_classic(gridlines = "both") +
+  #epitheme_classic(gridlines = "both") +
+  epitheme_dust() +
   color_epi_d()
 
 ```
@@ -68,7 +69,13 @@ devtools::install_github("jvieroe/repinion")
 
 ## __Epinion__ `ggplot()` themes
 
-Use `epitheme_*()` to quickly apply a tailormode `ggplot` theme to your graphs and data visualizations. This makes them compliant with the company CVI and serves as a time-saver, especially when producing numerous plots. At the moment, two Epinion theme exists: `epitheme_classic()`, designed for most visualization purposes, and `epitheme_map()`, a very minimalist theme designed with geospatial maps in mind.
+Use `epitheme_*()` to quickly apply a tailormode `ggplot` theme to your graphs and data visualizations. This makes them compliant with the company CVI and serves as a time-saver, especially when producing numerous plots.
+
+At the moment, `repinion` contains three Epinion themes: 
+
+* `epitheme_classic()`, designed for most visualization purposes,
+* `epitheme_map()`, a very minimalist theme designed with geospatial maps in mind,
+* `epitheme_map()`, to a large degree similar to `epitheme_classic()` but with a
 
 `epitheme_classic()` takes three arguments as inputs. 
 

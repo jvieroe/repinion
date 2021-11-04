@@ -4,7 +4,12 @@
 \alias{epitheme_dust}
 \title{Apply an Epinion styled theme to your \code{ggplot2} graphics}
 \usage{
-epitheme_dust(legend = TRUE, gridlines = "both", textcolor = "DarkBlue")
+epitheme_dust(
+  legend = TRUE,
+  gridlines = "both",
+  textcolor = "DarkBlue",
+  background = "no"
+)
 }
 \arguments{
 \item{legend}{a logical value indicating whether a legend is included. Defaults to \code{TRUE} (with \code{legend.position} defaulting to \code{"bottom"})}
@@ -12,6 +17,8 @@ epitheme_dust(legend = TRUE, gridlines = "both", textcolor = "DarkBlue")
 \item{gridlines}{Include gridlines? Options are \code{"both"}, \code{"none"}, \code{"x"} (for vertical), and \code{"y"} (for horizontal). Default is \code{"both"}}
 
 \item{textcolor}{Color for text elements in \code{theme()} options. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), include only the color name, not the \code{"Epinion"} prefix. Default is "black"}
+
+\item{background}{Apply the WarmSand color to plot background? Options are "no" and "yes". Default is "no"}
 }
 \value{
 a CVI compliant plot
