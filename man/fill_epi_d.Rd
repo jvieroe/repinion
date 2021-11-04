@@ -13,7 +13,7 @@ fill_epi_d(
 )
 }
 \arguments{
-\item{palette}{a continuous color palette. Default is "main"}
+\item{palette}{a discrete color palette, either "main" or "usered". Default is "usered"}
 
 \item{primary}{a name of a valid Epinion color (see \link[repinion]{getcols_epi}) to be applied to the primary category. Invalid with more than three levels}
 
