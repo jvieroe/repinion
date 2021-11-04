@@ -36,11 +36,15 @@ library(repinion)
 library(tidyverse)
 
 ggplot(mtcars, aes(x = wt,
-                   y = mpg,
-                   color = factor(carb))) +
-  geom_point(size = 5,
+                   y = mpg)) +
+  geom_point(aes(color = factor(carb)),
+             size = 5,
              alpha = .95) +
-  epitheme_classic() +
+  geom_smooth(method = "lm",
+              size = 1,
+              color = getElement(getcols_epi(), "Epinion Red"),
+              se = F) +
+  epitheme_classic(gridlines = "both") +
   color_epi_d()
 ```
 
