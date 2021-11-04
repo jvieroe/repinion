@@ -30,7 +30,7 @@ This function applies a theme consistent with the Epinion Corporate Visual Ident
 library(tidyverse)
 ggplot(mtcars, aes(x = wt, y = mpg)) +
 geom_point() +
-epitheme_classic()
+epitheme_dust()
 }
 \author{
 Jeppe Vierø

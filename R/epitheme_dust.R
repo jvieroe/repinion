@@ -10,7 +10,7 @@
 #' library(tidyverse)
 #' ggplot(mtcars, aes(x = wt, y = mpg)) +
 #' geom_point() +
-#' epitheme_classic()
+#' epitheme_dust()
 #' @author Jeppe Vierø
 #' @import ggplot2 scales
 #' @export

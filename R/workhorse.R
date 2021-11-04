@@ -51,7 +51,7 @@ check_theme_map <- function(legend,
 check_theme_dust <- function(legend,
                              gridlines,
                              textcolor,
-                             background = background) {
+                             background) {
 
   if(!legend %in% c(TRUE, FALSE)) {
     stop("Invalid 'legend' argument provided. Must be logical")
@@ -68,7 +68,6 @@ check_theme_dust <- function(legend,
   if(!background %in% c("no", "yes")) {
     stop("Invalid 'background' argument provided. Must be 'no' or 'yes'")
   }
-
 
 }
 
