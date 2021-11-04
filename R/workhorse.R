@@ -86,7 +86,9 @@ epi_pal_d <- function(palette = "main",
 
   function(n) {
 
-    if (n > 12) warning("The discrete Epinion color palette only has 12 colors.")
+    if (n > 11 && palette == "main") warning("The 'main' discrete Epinion color palette only has 11 colors.")
+
+    if (n > 12 && palette == "usered") warning("The 'usered' discrete Epinion color palette only has 12 colors.")
 
     if (n == 2 && !is.null(primary)) {
 
