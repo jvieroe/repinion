@@ -24,7 +24,7 @@ epitheme_dust(
 a CVI compliant plot
 }
 \description{
-This function applies a theme consistent with the Epinion Corporate Visual Identity (CVI) to your \code{ggplot2} graphics. Add it to your \code{ggplot2} syntax for conistent visual outputs.
+This function applies a warm theme consistent with the Epinion Corporate Visual Identity (CVI) to your \code{ggplot2} graphics. Add it to your \code{ggplot2} syntax for conistent visual outputs.
 }
 \examples{
 library(tidyverse)
