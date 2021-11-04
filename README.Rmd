@@ -52,7 +52,7 @@ ggplot(mtcars, aes(x = wt,
               color = getElement(getcols_epi(), "Epinion Red"),
               se = F) +
   epitheme_classic(gridlines = "both") +
-  color_epi_d()
+  color_epi_d(palette = "main")
 
 ```
 
@@ -87,8 +87,7 @@ ggplot(mtcars, aes(x = wt,
   geom_point(size = 5,
              alpha = .95) +
   epitheme_dust(background = "yes") +
-  color_epi_d(palette = "main",
-              primary = "Red",
+  color_epi_d(primary = "Red",
               secondary = "DarkBlue")
 
 ```
@@ -154,12 +153,13 @@ The main argument taken by all four functions is `reverse` which allows you to r
 p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F) +
-  color_epi_d()
+  color_epi_d(palette = "main")
 
 p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F) +
-  color_epi_d(reverse = T)
+  color_epi_d(palette = "main",
+              reverse = T)
 
 p3 <- ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
   geom_point(size = 5, shape = 21, color = "NA", alpha = .95) +

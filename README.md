@@ -45,7 +45,7 @@ ggplot(mtcars, aes(x = wt,
               color = getElement(getcols_epi(), "Epinion Red"),
               se = F) +
   epitheme_classic(gridlines = "both") +
-  color_epi_d()
+  color_epi_d(palette = "main")
 ```
 
 <img src="man/figures/README-example-1.png" width="85%" style="display: block; margin: auto;" />
@@ -87,7 +87,9 @@ ggplot(mtcars, aes(x = wt,
                    color = factor(am))) +
   geom_point(size = 5,
              alpha = .95) +
-  epitheme_dust(background = "yes")
+  epitheme_dust(background = "yes") +
+  color_epi_d(primary = "Red",
+              secondary = "DarkBlue")
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="85%" style="display: block; margin: auto;" />
@@ -174,12 +176,13 @@ you to reverse the order of the color scale (default is `FALSE`)
 p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F) +
-  color_epi_d()
+  color_epi_d(palette = "main")
 
 p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F) +
-  color_epi_d(reverse = T)
+  color_epi_d(palette = "main",
+              reverse = T)
 
 p3 <- ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
   geom_point(size = 5, shape = 21, color = "NA", alpha = .95) +
