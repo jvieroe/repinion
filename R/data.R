@@ -8,7 +8,7 @@
 
 #' Discrete Epinion color palettes
 #'
-#' @format A `list` with 1 element
+#' @format A `list` with 2 elements
 "epipal_d"
 
 
@@ -16,6 +16,4 @@
 #'
 #' @format A `list` with 6 elements
 "epipal_c"
-
-
 
