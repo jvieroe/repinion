@@ -76,7 +76,7 @@ At the moment, `repinion` contains three Epinion themes:
   + arguments: `legend`, `gridlines`, `textcolor`
 * `epitheme_map()`, a very minimalist theme designed with geospatial maps in mind
   + arguments: `legend`, `textcolor`
-* `epitheme_dust()`, to a large degree similar to `epitheme_classic()` but with a warmer feel
+* `epitheme_dust()`, to a large degree similar to `epitheme_classic()` but with a warmer, dusty feel
   + arguments: `legend`, `gridlines`, `textcolor`, `background`
 
 

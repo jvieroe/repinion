@@ -76,7 +76,7 @@ At the moment, `repinion` contains three Epinion themes:
     maps in mind
       - arguments: `legend`, `textcolor`
   - `epitheme_dust()`, to a large degree similar to `epitheme_classic()`
-    but with a warmer feel
+    but with a warmer, dusty feel
       - arguments: `legend`, `gridlines`, `textcolor`, `background`
 
 <!-- end list -->
