@@ -94,10 +94,10 @@ ggplot(mtcars, aes(x = wt,
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="85%" style="display: block; margin: auto;" />
 
-Evidently, `epitheme_classic()` only impacts `ggplot2::theme()` elements
-and not the aesthetics of your actual plot. We can override `theme()`
-elements inherent to `repinion::epitheme_classic()` by specifying this
-in `theme(...)` **afterwards**.
+Evidently, `epitheme_*()` only impacts `ggplot2::theme()` elements and
+not the aesthetics of your actual plot. We can override `theme()`
+elements inherent to `repinion::epitheme_*()` by specifying this in
+`theme(...)` **afterwards**.
 
 ## The **Epinion** color palette
 
@@ -129,22 +129,23 @@ HEX codes provided by `getcols_epi()` directly or (2) by pasting the
 names into the `base::getElement()` function:
 
 ``` r
-library(gridExtra)
 
 # use the HEX codes directly
 p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F) +
-  scale_color_manual(values = c("#0F283C", "#E8E1D5"))
+  scale_color_manual(values = c("#0F283C", "#E13C32"))
 
 # use the color names
 p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F) +
   scale_color_manual(values = c(getElement(getcols_epi(), "Epinion DarkBlue"),
-                                getElement(getcols_epi(), "Epinion WarmSand")))
+                                getElement(getcols_epi(), "Epinion Red")))
 
-grid.arrange(p1, p2, ncol = 2) ; rm(p1, p2)
+
+library(patchwork)
+(p1 / p2)
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="85%" style="display: block; margin: auto;" />
@@ -194,12 +195,21 @@ p4 <- ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
   epitheme_classic(legend = F, gridlines = "y") +
   fill_epi_c(reverse = T)
 
-grid.arrange(p1, p2, p3, p4, ncol = 2) ; rm(p1, p2, p3, p4)
+library(patchwork)
+(p1 + p2) /
+  (p3 + p4) + 
+  plot_annotation(theme = 
+                    theme(plot.background = 
+                            element_rect(color = NA,
+                                         fill = getElement(getcols_epi(), "Epinion WarmSand"),
+                                         )
+                          )
+                  )
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="85%" style="display: block; margin: auto;" />
 
-#### Additional options: `*_epi_d()`
+#### Additional arguments: `*_epi_d()`
 
   - When mapping `color_epi_d()` or `fill_epi_d()` to a variable with
     **only two levels**, you can manually choose colors with the
@@ -207,13 +217,24 @@ grid.arrange(p1, p2, p3, p4, ncol = 2) ; rm(p1, p2, p3, p4)
   - `repinion` contains two different discrete color palettes: `main`
     and `usered`. The latter includes Epinion Red
 
-#### Additional options: `*_epi_c()`
+#### Additional arguments: `*_epi_c()`
 
   - `repinion` contains six different continuous color palettes:
     `epiblue`, `epipurple`, `epigreen`, `epigold`, `epiredblue`, and
     `epidarkblue`.
   - You choose between these with the `palette` option in
     `color_epi_c()` and `fill_epi_c()`
+
+#### Additional arguments
+
+Notice that `*_epi_c()` and `*_epi_d()` inherently calls
+`ggplot2::scale_*_gradientn()` and `ggplot2::discrete_scale()`,
+respectively. For that reason, additional arguments, such as `guide`,
+also apply. See
+[`ggplot2::scale_colour_gradientn()`](https://tidyverse.github.io/ggplot2-docs/reference/scale_gradient.html "Gradient colour scales")
+and
+[`ggplot2::discrete_scale()`](https://ggplot2.tidyverse.org/reference/discrete_scale.html "Discrete scale constructor")
+for details on additional arguments.
 
 # Acknowledgements
 
