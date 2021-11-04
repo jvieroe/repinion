@@ -10,6 +10,8 @@
 Releases](https://img.shields.io/github/downloads/jvieroe/repinion/total.svg)]()
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/jvieroe/repinion/workflows/R-CMD-check/badge.svg)](https://github.com/jvieroe/repinion/actions)
+[![License: GPL
+(\>= 3)](https://img.shields.io/badge/license-GPL%20\(%3E=%203\)-blue.svg)](https://cran.r-project.org/web/licenses/GPL%20\(%3E=%203\))
 <!-- badges: end -->
 
 The goal of `repinion` is to provide Epinion employees with `ggplot2`
@@ -110,6 +112,7 @@ getcols_epi()
 #>             "#BA7384"             "#A7C7D7"             "#004337" 
 #>    Epinion LightGreen          Epinion Gold     Epinion LightGold 
 #>             "#73A89A"             "#C18022"             "#EBC882"
+
 getcols_epi("Epinion DarkBlue")
 #> Epinion DarkBlue 
 #>        "#0F283C"
