@@ -29,7 +29,7 @@ epitheme_classic <- function(legend = TRUE,
 
   } else if (textcolor != "black") {
 
-    theme_textcolor <- getElement(repinion::getcols_epi(), paste0("Epinion ",
+    theme_textcolor <- base::getElement(repinion::getcols_epi(), paste0("Epinion ",
                                                         textcolor))
 
   }
@@ -57,8 +57,8 @@ epitheme_classic <- function(legend = TRUE,
                    strip.text = element_text(colour = theme_textcolor,
                                              face = "plain",
                                              size = 11),
-                   strip.background = element_rect(color = getElement(repinion::getcols_epi(), "Epinion WarmSand"),
-                                                   fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"), 0.4)),
+                   strip.background = element_rect(color = base::getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                   fill = scales::alpha(base::getElement(repinion::getcols_epi(), "Epinion WarmSand"), 0.4)),
                    plot.title = element_text(colour = theme_textcolor,
                                              face = "bold",
                                              size = 16),

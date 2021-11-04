@@ -32,7 +32,7 @@ epitheme_dust <- function(legend = TRUE,
 
   } else if (textcolor != "black") {
 
-    theme_textcolor <- getElement(repinion::getcols_epi(), paste0("Epinion ",
+    theme_textcolor <- base::getElement(repinion::getcols_epi(), paste0("Epinion ",
                                                                   textcolor))
 
   }
@@ -60,8 +60,8 @@ epitheme_dust <- function(legend = TRUE,
                    strip.text = element_text(colour = theme_textcolor,
                                              face = "plain",
                                              size = 11),
-                   strip.background = element_rect(color = getElement(repinion::getcols_epi(), "Epinion WarmSand"),
-                                                   fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                   strip.background = element_rect(color = base::getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                   fill = scales::alpha(base::getElement(repinion::getcols_epi(), "Epinion WarmSand"),
                                                                         1.0)),
                    plot.title = element_text(colour = theme_textcolor,
                                              face = "bold",
@@ -70,7 +70,7 @@ epitheme_dust <- function(legend = TRUE,
                                                 face = "plain",
                                                 size = 14),
                    panel.background = element_rect(color = "transparent",
-                                                   fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                   fill = scales::alpha(base::getElement(repinion::getcols_epi(), "Epinion WarmSand"),
                                                                         1.0))
                    )
 
@@ -102,13 +102,13 @@ epitheme_dust <- function(legend = TRUE,
 
     ppp <- pp +
       ggplot2::theme(plot.background = element_rect(color = "transparent",
-                                                    fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                    fill = scales::alpha(base::getElement(repinion::getcols_epi(), "Epinion WarmSand"),
                                                                          1.0)),
                      legend.background = element_rect(color = "transparent",
-                                                      fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                      fill = scales::alpha(base::getElement(repinion::getcols_epi(), "Epinion WarmSand"),
                                                                            1.0)),
                      legend.box.background = element_rect(color = "transparent",
-                                                          fill = scales::alpha(getElement(repinion::getcols_epi(), "Epinion WarmSand"),
+                                                          fill = scales::alpha(base::getElement(repinion::getcols_epi(), "Epinion WarmSand"),
                                                                                1.0))
       )
 
