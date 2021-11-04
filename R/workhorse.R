@@ -92,7 +92,7 @@ check_col_d <- function(primary,
 }
 
 #' @noRd
-epi_pal_d <- function(palette = "main",
+epi_pal_d <- function(palette = "usered",
                       primary = NULL,
                       secondary = NULL,
                       reverse = FALSE) {
@@ -131,6 +131,17 @@ epi_pal_d <- function(palette = "main",
       if (!paste0("Epinion ", secondary) %in% names(pal)) {
         stop("Provided secondary color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (without Epinion prefix)")
       }
+
+      #
+      if (!paste0("Epinion ", primary) == "Red" && palette == "main") {
+        stop("Specify palette = 'usered' if you want to use 'Epinion Red'")
+      }
+
+      if (!paste0("Epinion ", secondary) == "Red" && palette == "main") {
+        stop("Specify palette = 'usered' if you want to use 'Epinion Red'")
+      }
+
+      #
 
       primary <- paste0("Epinion ", primary)
       secondary <- paste0("Epinion ", secondary)

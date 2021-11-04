@@ -15,7 +15,7 @@
 #' @import ggplot2
 #' @export
 
-fill_epi_d <- function(palette = "main",
+fill_epi_d <- function(palette = "usered",
                        primary = NULL,
                        secondary = NULL,
                        reverse = FALSE,

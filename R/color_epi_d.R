@@ -15,7 +15,7 @@
 #' @import ggplot2
 #' @export
 
-color_epi_d <- function(palette = "main",
+color_epi_d <- function(palette = "usered",
                         primary = NULL,
                         secondary = NULL,
                         reverse = FALSE,

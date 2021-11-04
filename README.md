@@ -66,21 +66,20 @@ devtools::install_github("jvieroe/repinion")
 Use `epitheme_*()` to quickly apply a tailormode `ggplot` theme to your
 graphs and data visualizations. This makes them compliant with the
 company CVI and serves as a time-saver, especially when producing
-numerous plots. At the moment, two Epinion theme exists:
-`epitheme_classic()`, designed for most visualization purposes, and
-`epitheme_map()`, a very minimalist theme designed with geospatial maps
-in mind.
+numerous plots.
 
-`epitheme_classic()` takes three arguments as inputs.
+At the moment, `repinion` contains three Epinion themes:
 
-  - `legend`, specifying whether to include a legend
-  - `gridlines`, specifying whether to include horizontal and/or
-    vertical gridlines
-  - `textcolor`, for specifying text color applied to theme text (axis
-    labels, axis titles etc.)
+  - `epitheme_classic()`, designed for most visualization purposes
+      - arguments: `legend`, `gridlines`, `textcolor`
+  - `epitheme_map()`, a very minimalist theme designed with geospatial
+    maps in mind
+      - arguments: `legend`, `textcolor`
+  - `epitheme_dust()`, to a large degree similar to `epitheme_classic()`
+    but with a warmer feel
+      - arguments: `legend`, `gridlines`, `textcolor`, `background`
 
-`epitheme_map()` does not take the `gridlines` argument but is otherwise
-functionally similar.
+<!-- end list -->
 
 ``` r
 ggplot(mtcars, aes(x = wt,
@@ -88,8 +87,7 @@ ggplot(mtcars, aes(x = wt,
                    color = factor(am))) +
   geom_point(size = 5,
              alpha = .95) +
-  epitheme_classic(legend = T,
-                   gridlines = "both")
+  epitheme_dust(background = "yes")
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="85%" style="display: block; margin: auto;" />
@@ -98,9 +96,6 @@ Evidently, `epitheme_classic()` only impacts `ggplot2::theme()` elements
 and not the aesthetics of your actual plot. We can override `theme()`
 elements inherent to `repinion::epitheme_classic()` by specifying this
 in `theme(...)` **afterwards**.
-
-`epitheme_classic()` only impacts `ggplot2::theme()` elements and not
-the aesthetics of your actual plot.
 
 ## The **Epinion** color palette
 
@@ -206,6 +201,8 @@ grid.arrange(p1, p2, p3, p4, ncol = 2) ; rm(p1, p2, p3, p4)
   - When mapping `color_epi_d()` or `fill_epi_d()` to a variable with
     **only two levels**, you can manually choose colors with the
     `primary` and `secondary` arguments
+  - `repinion` contains two different discrete color palettes: `main`
+    and `usered`. The latter includes Epinion Red
 
 #### Additional options: `*_epi_c()`
 

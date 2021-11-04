@@ -6,7 +6,7 @@
 \title{Apply a discrete color scale to your \code{ggplot2} graphics}
 \usage{
 color_epi_d(
-  palette = "main",
+  palette = "usered",
   primary = NULL,
   secondary = NULL,
   reverse = FALSE,
@@ -14,7 +14,7 @@ color_epi_d(
 )
 
 colour_epi_d(
-  palette = "main",
+  palette = "usered",
   primary = NULL,
   secondary = NULL,
   reverse = FALSE,
