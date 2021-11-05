@@ -27,7 +27,7 @@ check_theme <- function(legend,
     stop("Invalid 'gridlines' argument provided. Must be either 'both', 'none', 'x', or 'y'")
   }
 
-  if(!textcolor %in% c(names(repinion::epi_cols), "Epinion black")) {
+  if(!textcolor %in% c(names(repinion::epi_cols), "black")) {
     stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
@@ -41,7 +41,7 @@ check_theme_map <- function(legend,
     stop("Invalid 'legend' argument provided. Must be logical")
   }
 
-  if(!textcolor %in% c(names(repinion::epi_cols), "Epinion black")) {
+  if(!textcolor %in% c(names(repinion::epi_cols), "black")) {
     stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
@@ -61,7 +61,7 @@ check_theme_dust <- function(legend,
     stop("Invalid 'gridlines' argument provided. Must be either 'both', 'none', 'x', or 'y'")
   }
 
-  if(!textcolor %in% c(names(repinion::epi_cols), "Epinion black")) {
+  if(!textcolor %in% c(names(repinion::epi_cols), "black")) {
     stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
