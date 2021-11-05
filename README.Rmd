@@ -78,6 +78,8 @@ At the moment, `repinion` contains three Epinion themes:
   + arguments: `legend`, `textcolor`
 * `epitheme_dust()`, to a large degree similar to `epitheme_classic()` but with a warmer, dusty feel
   + arguments: `legend`, `gridlines`, `textcolor`, `background`
+  
+Note that you can override `theme()` elements inherent to `repinion::epitheme_*()` by specifying this in `theme(...)` __afterwards__.
 
 
 ```{r warning=F, message=F}
@@ -87,11 +89,11 @@ ggplot(mtcars, aes(x = wt,
   geom_point(size = 5,
              alpha = .95) +
   epitheme_dust() +
-  color_epi_d()
+  theme(legend.position = "right")
 
 ```
 
-Evidently, `epitheme_*()` only impacts `ggplot2::theme()` elements and not the aesthetics of your actual plot. We can override `theme()` elements inherent to `repinion::epitheme_*()` by specifying this in `theme(...)` __afterwards__.
+Evidently, `epitheme_*()` only impacts `ggplot2::theme()` elements and not the aesthetics of your actual plot (e.g. color scales). 
 
 
 ## The __Epinion__ color palette 
@@ -109,26 +111,23 @@ getcols_epi("Epinion DarkBlue")
 
 ```
 
-We can use these to manually change our colors by either (1) using the HEX codes provided by `getcols_epi()` directly or (2) by pasting the names into the `base::getElement()` function:
+We can use these to manually change our colors by either (1) using the HEX codes provided by `repinion::getcols_epi()` directly or (2) by pasting the names into the `repinion::grabcol()` function. Both functions only accept colors in the Epinion color palette as inputs but are not sensitive to the inclusion of the Epinion prefix:
 
 
 ```{r warning=F, message=F}
-
-# use the HEX codes directly
 p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_dust(legend = F) +
-  scale_color_manual(values = c("#0F283C", "#E13C32"))
+  scale_color_manual(values = c(grabcol("DarkBlue"),
+                                grabcol("Red")))
 
-# use the color names
 p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_dust(legend = F) +
   color_epi_d(primary = "Red",
               secondary = "DarkBlue")
-  scale_color_manual(values = c(getElement(getcols_epi(), "Epinion DarkBlue"),
-                                getElement(getcols_epi(), "Epinion Red")))
-
+  scale_color_manual(values = c(grabcol("Epinion DarkBlue"),
+                                grabcol("Epinion Red")))
 
 
 library(patchwork)
@@ -136,7 +135,7 @@ library(patchwork)
   plot_annotation(theme = 
                     theme(plot.background = 
                             element_rect(color = NA,
-                                         fill = getElement(getcols_epi(), "Epinion WarmSand"),
+                                         fill = grabcol("Epinion WarmSand"),
                                          )
                           )
                   )

@@ -27,8 +27,8 @@ check_theme <- function(legend,
     stop("Invalid 'gridlines' argument provided. Must be either 'both', 'none', 'x', or 'y'")
   }
 
-  if(!paste0("Epinion ", textcolor) %in% c(names(repinion::epi_cols), "Epinion black")) {
-    stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (without Epinion prefix)")
+  if(!textcolor %in% c(names(repinion::epi_cols), "Epinion black")) {
+    stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
 }
@@ -41,8 +41,8 @@ check_theme_map <- function(legend,
     stop("Invalid 'legend' argument provided. Must be logical")
   }
 
-  if(!paste0("Epinion ", textcolor) %in% c(names(repinion::epi_cols), "Epinion black")) {
-    stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (without Epinion prefix)")
+  if(!textcolor %in% c(names(repinion::epi_cols), "Epinion black")) {
+    stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
 }
@@ -61,8 +61,8 @@ check_theme_dust <- function(legend,
     stop("Invalid 'gridlines' argument provided. Must be either 'both', 'none', 'x', or 'y'")
   }
 
-  if(!paste0("Epinion ", textcolor) %in% c(names(repinion::epi_cols), "Epinion black")) {
-    stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (without Epinion prefix)")
+  if(!textcolor %in% c(names(repinion::epi_cols), "Epinion black")) {
+    stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
   if(!background %in% c("no", "yes")) {
@@ -80,12 +80,12 @@ check_col_d <- function(primary,
     stop("Invalid 'reverse' argument provided. Must be logical")
   }
 
-  if(!is.null(primary) && !paste0("Epinion ", primary) %in% names(repinion::epi_cols)) {
-    stop("Provided 'primary' color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (without Epinion prefix)")
+  if(!is.null(primary) && primary %in% names(repinion::epi_cols)) {
+    stop("Provided 'primary' color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
-  if(!is.null(secondary) && !paste0("Epinion ", secondary) %in% names(repinion::epi_cols)) {
-    stop("Provided 'secondary' color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (without Epinion prefix)")
+  if(!is.null(secondary) && !secondary %in% names(repinion::epi_cols)) {
+    stop("Provided 'secondary' color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
 }
@@ -95,6 +95,35 @@ epi_pal_d <- function(palette = "usered",
                       primary = NULL,
                       secondary = NULL,
                       reverse = FALSE) {
+
+  if (!is.null(primary)) {
+
+    if (base::grepl("Epinion ", primary) == TRUE) {
+
+      primary <- primary
+
+    } else if (base::grepl("Epinion ", primary) == FALSE) {
+
+      primary <- paste0("Epinion ", primary)
+
+    }
+
+  }
+
+  if (!is.null(secondary)) {
+
+    if (base::grepl("Epinion ", secondary) == TRUE) {
+
+      secondary <- secondary
+
+    } else if (base::grepl("Epinion ", secondary) == FALSE) {
+
+      secondary <- paste0("Epinion ", secondary)
+
+    }
+
+  }
+
 
   check_col_d(primary = primary,
               secondary = secondary,
@@ -115,16 +144,15 @@ epi_pal_d <- function(palette = "usered",
     if (n == 2 && !is.null(primary)) {
 
       #
-      if (!paste0("Epinion ", primary) == "Red" && palette == "main") {
+      if (primary == "Red" && palette == "main") {
         stop("Specify palette = 'usered' if you want to use 'Epinion Red'")
       }
 
-      if (!paste0("Epinion ", secondary) == "Red" && palette == "main") {
+      if (secondary == "Red" && palette == "main") {
         stop("Specify palette = 'usered' if you want to use 'Epinion Red'")
       }
 
       #
-
       # check_primary_secondary(primary = primary,
       #                         secondary = secondary)
 
@@ -134,16 +162,16 @@ epi_pal_d <- function(palette = "usered",
 
       if (secondary == primary) warning("Same color applied to both primary and secondary category")
 
-      if (!paste0("Epinion ", primary) %in% names(pal)) {
-        stop("Provided primary color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (without Epinion prefix)")
+      if (!primary %in% names(pal)) {
+        stop("Provided primary color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (with or without Epinion prefix)")
       }
 
-      if (!paste0("Epinion ", secondary) %in% names(pal)) {
-        stop("Provided secondary color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (without Epinion prefix)")
+      if (!secondary %in% names(pal)) {
+        stop("Provided secondary color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (with or without Epinion prefix)")
       }
 
-      primary <- paste0("Epinion ", primary)
-      secondary <- paste0("Epinion ", secondary)
+      # primary <- paste0("Epinion ", primary)
+      # secondary <- paste0("Epinion ", secondary)
 
       secondary <- if (!secondary %in% names(pal)) {
 
@@ -192,12 +220,12 @@ check_primary_secondary <- function(primary,
 
   if (secondary == primary) warning("Same color applied to both primary and secondary category")
 
-  if (!paste0("Epinion ", primary) %in% names(pal)) {
-    stop("Provided primary color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (without Epinion prefix)")
+  if (!primary %in% names(pal)) {
+    stop("Provided primary color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
-  if (!paste0("Epinion ", secondary) %in% names(pal)) {
-    stop("Provided secondary color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (without Epinion prefix)")
+  if (!secondary %in% names(pal)) {
+    stop("Provided secondary color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
 }
@@ -223,7 +251,7 @@ check_col_c <- function(palette,
 check_color_grab <- function(color) {
 
   if(!color %in% names(repinion::epi_cols)) {
-    stop("Invalid color provided. Must be one of names(repinion::epi_cols) (with/without Epinion prefix)")
+    stop("Invalid color provided. Must be one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
 }

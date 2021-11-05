@@ -26,15 +26,14 @@ epitheme_map <- function(legend = TRUE,
 
   } else if (textcolor != "black") {
 
-    theme_textcolor <- base::getElement(repinion::getcols_epi(), paste0("Epinion ",
-                                                        textcolor))
+    theme_textcolor <- repinion::grabcol(textcolor)
 
   }
 
   p <-
     ggplot2::theme_void() +
     ggplot2::theme(strip.text = element_text(colour = theme_textcolor,
-                                             face = "plain",
+                                             face = "bold",
                                              size = 11),
                    strip.background = element_rect(color = "black",
                                                    fill = "transparent"),
