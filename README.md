@@ -144,14 +144,7 @@ p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
 
 
 library(patchwork)
-(p1 / p2) + 
-  plot_annotation(theme = 
-                    theme(plot.background = 
-                            element_rect(color = NA,
-                                         fill = grabcol("Epinion WarmSand"),
-                                         )
-                          )
-                  )
+(p1 / p2) 
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="85%" style="display: block; margin: auto;" />
