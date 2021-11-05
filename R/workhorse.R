@@ -80,7 +80,7 @@ check_col_d <- function(primary,
     stop("Invalid 'reverse' argument provided. Must be logical")
   }
 
-  if(!is.null(primary) && primary %in% names(repinion::epi_cols)) {
+  if(!is.null(primary) && !primary %in% names(repinion::epi_cols)) {
     stop("Provided 'primary' color is not in the Epinion color palette. Must be one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
