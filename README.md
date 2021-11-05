@@ -42,7 +42,7 @@ ggplot(mtcars, aes(x = wt,
              alpha = .95) +
   geom_smooth(method = "lm",
               size = 1,
-              color = getElement(getcols_epi(), "Epinion Red"),
+              color = grabcol("Epinion Red"),
               se = F) +
   epitheme_classic(gridlines = "both") +
   color_epi_d(palette = "main")
@@ -79,7 +79,9 @@ At the moment, `repinion` contains three Epinion themes:
     but with a warmer, dusty feel
       - arguments: `legend`, `gridlines`, `textcolor`, `background`
 
-<!-- end list -->
+Note that you can override `theme()` elements inherent to
+`repinion::epitheme_*()` by specifying this in `theme(...)`
+**afterwards**.
 
 ``` r
 ggplot(mtcars, aes(x = wt,
@@ -88,15 +90,13 @@ ggplot(mtcars, aes(x = wt,
   geom_point(size = 5,
              alpha = .95) +
   epitheme_dust() +
-  color_epi_d()
+  theme(legend.position = "right")
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="85%" style="display: block; margin: auto;" />
 
 Evidently, `epitheme_*()` only impacts `ggplot2::theme()` elements and
-not the aesthetics of your actual plot. We can override `theme()`
-elements inherent to `repinion::epitheme_*()` by specifying this in
-`theme(...)` **afterwards**.
+not the aesthetics of your actual plot (e.g. color scales).
 
 ## The **Epinion** color palette
 
@@ -124,27 +124,34 @@ getcols_epi("Epinion DarkBlue")
 ```
 
 We can use these to manually change our colors by either (1) using the
-HEX codes provided by `getcols_epi()` directly or (2) by pasting the
-names into the `base::getElement()` function:
+HEX codes provided by `repinion::getcols_epi()` directly or (2) by
+pasting the names into the `repinion::grabcol()` function. Both
+functions only accept colors in the Epinion color palette as inputs but
+are not sensitive to the inclusion of the Epinion prefix:
 
 ``` r
-
-# use the HEX codes directly
 p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   geom_point(size = 5, alpha = .95) +
-  epitheme_classic(legend = F) +
-  scale_color_manual(values = c("#0F283C", "#E13C32"))
+  epitheme_dust(legend = F) +
+  scale_color_manual(values = c(grabcol("DarkBlue"),
+                                grabcol("Red")))
 
-# use the color names
 p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   geom_point(size = 5, alpha = .95) +
-  epitheme_classic(legend = F) +
-  scale_color_manual(values = c(getElement(getcols_epi(), "Epinion DarkBlue"),
-                                getElement(getcols_epi(), "Epinion Red")))
+  epitheme_dust(legend = F) +
+  scale_color_manual(values = c(grabcol("Epinion DarkBlue"),
+                                grabcol("Epinion Red")))
 
 
 library(patchwork)
-(p1 / p2)
+(p1 / p2) + 
+  plot_annotation(theme = 
+                    theme(plot.background = 
+                            element_rect(color = NA,
+                                         fill = grabcol("Epinion WarmSand"),
+                                         )
+                          )
+                  )
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="85%" style="display: block; margin: auto;" />
@@ -176,9 +183,39 @@ you to reverse the order of the color scale (default is `FALSE`).
 
   - When mapping `color_epi_d()` or `fill_epi_d()` to a variable with
     **only two levels**, you can manually choose colors with the
-    `primary` and `secondary` arguments
-  - `repinion` contains two different discrete color palettes: `main`
-    and `usered`. The latter includes Epinion Red
+    `primary` and `secondary` arguments. As with `repinion::grabcol()`
+    colors can be specified with or without the Epinion prefix
+  - `repinion` contains three different discrete color palettes: `main`,
+    `usered` **(the default)**, and `nosand`. `main` excludes Epinion
+    Red. `nosand` excludes Warm Sand and is the preferred discrete
+    palette when using `epitheme_dust()`
+
+<!-- end list -->
+
+``` r
+p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(vs))) +
+  geom_point(size = 5, alpha = .95) +
+  epitheme_dust(legend = F) +
+  color_epi_d(primary = "Red",
+              secondary = "Epinion DarkBlue")
+
+p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 5, alpha = .95) +
+  epitheme_dust(legend = F) +
+  color_epi_d(palette = "nosand")
+
+library(patchwork)
+p1 / p2 + 
+  plot_annotation(theme = 
+                    theme(plot.background = 
+                            element_rect(color = NA,
+                                         fill = grabcol("Epinion WarmSand"),
+                                         )
+                          )
+                  )
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="85%" style="display: block; margin: auto;" />
 
 #### Additional arguments: `*_epi_c()`
 
@@ -191,15 +228,16 @@ you to reverse the order of the color scale (default is `FALSE`).
 <!-- end list -->
 
 ``` r
-p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = disp)) +
   geom_point(size = 5, alpha = .95) +
-  epitheme_classic(legend = F) +
-  color_epi_d()
+  epitheme_classic(legend = F, gridlines = "x") +
+  color_epi_c(palette = "epipurple")
 
-p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = disp)) +
   geom_point(size = 5, alpha = .95) +
-  epitheme_classic(legend = F) +
-  color_epi_d(reverse = T)
+  epitheme_classic(legend = F, gridlines = "x") +
+  color_epi_c(palette = "epipurple",
+              reverse = T)
 
 p3 <- ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
   geom_point(size = 5, shape = 21, color = "NA", alpha = .95) +
@@ -213,17 +251,10 @@ p4 <- ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
 
 library(patchwork)
 (p1 + p2) /
-  (p3 + p4) + 
-  plot_annotation(theme = 
-                    theme(plot.background = 
-                            element_rect(color = NA,
-                                         fill = getElement(getcols_epi(), "Epinion WarmSand"),
-                                         )
-                          )
-                  )
+  (p3 + p4)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="85%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="85%" style="display: block; margin: auto;" />
 
 #### Additional arguments
 
