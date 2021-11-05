@@ -5,7 +5,7 @@
 \alias{epipal_d}
 \title{Discrete Epinion color palettes}
 \format{
-A \code{list} with 2 elements
+A \code{list} with 3 elements
 }
 \usage{
 epipal_d
