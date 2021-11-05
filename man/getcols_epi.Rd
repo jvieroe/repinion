@@ -2,7 +2,7 @@
 % Please edit documentation in R/getcols_epi.R
 \name{getcols_epi}
 \alias{getcols_epi}
-\title{Extract colors from the Epinion CVI color palette by their name}
+\title{Extract named colors from the Epinion CVI color palette by their name}
 \usage{
 getcols_epi(...)
 }

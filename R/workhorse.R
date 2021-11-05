@@ -219,4 +219,11 @@ check_col_c <- function(palette,
 }
 
 
+#' @noRd
+check_color_grab <- function(color) {
 
+  if(!color %in% names(repinion::epi_cols)) {
+    stop("Invalid color provided. Must be one of names(repinion::epi_cols) (with/without Epinion prefix)")
+  }
+
+}

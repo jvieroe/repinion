@@ -170,19 +170,36 @@ variables and for both `aes(color =)` and `aes(fill =)`:
     `numeric` or `integer` variable
 
 The main argument taken by all four functions is `reverse` which allows
-you to reverse the order of the color scale (default is `FALSE`)
+you to reverse the order of the color scale (default is `FALSE`).
+
+#### Additional arguments: `*_epi_d()`
+
+  - When mapping `color_epi_d()` or `fill_epi_d()` to a variable with
+    **only two levels**, you can manually choose colors with the
+    `primary` and `secondary` arguments
+  - `repinion` contains two different discrete color palettes: `main`
+    and `usered`. The latter includes Epinion Red
+
+#### Additional arguments: `*_epi_c()`
+
+  - `repinion` contains six different continuous color palettes:
+    `epiblue`, `epipurple`, `epigreen`, `epigold`, `epiredblue`, and
+    `epidarkblue`.
+  - You choose between these with the `palette` option in
+    `color_epi_c()` and `fill_epi_c()`
+
+<!-- end list -->
 
 ``` r
 p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F) +
-  color_epi_d(palette = "main")
+  color_epi_d()
 
 p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F) +
-  color_epi_d(palette = "main",
-              reverse = T)
+  color_epi_d(reverse = T)
 
 p3 <- ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
   geom_point(size = 5, shape = 21, color = "NA", alpha = .95) +
@@ -207,22 +224,6 @@ library(patchwork)
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="85%" style="display: block; margin: auto;" />
-
-#### Additional arguments: `*_epi_d()`
-
-  - When mapping `color_epi_d()` or `fill_epi_d()` to a variable with
-    **only two levels**, you can manually choose colors with the
-    `primary` and `secondary` arguments
-  - `repinion` contains two different discrete color palettes: `main`
-    and `usered`. The latter includes Epinion Red
-
-#### Additional arguments: `*_epi_c()`
-
-  - `repinion` contains six different continuous color palettes:
-    `epiblue`, `epipurple`, `epigreen`, `epigold`, `epiredblue`, and
-    `epidarkblue`.
-  - You choose between these with the `palette` option in
-    `color_epi_c()` and `fill_epi_c()`
 
 #### Additional arguments
 
