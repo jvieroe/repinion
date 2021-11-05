@@ -88,8 +88,7 @@ ggplot(mtcars, aes(x = wt,
   geom_point(size = 5,
              alpha = .95) +
   epitheme_dust() +
-  color_epi_d(primary = "Red",
-              secondary = "DarkBlue")
+  color_epi_d()
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="85%" style="display: block; margin: auto;" />
