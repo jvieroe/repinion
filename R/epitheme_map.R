@@ -16,6 +16,28 @@
 epitheme_map <- function(legend = TRUE,
                          textcolor = "DarkBlue") {
 
+
+  if (textcolor == "black") {
+
+    textcolor <- "black"
+
+  } else if (textcolor != "black") {
+
+    textcolor <- textcolor
+
+    if (base::grepl("Epinion ", textcolor) == TRUE) {
+
+      textcolor <- textcolor
+
+    } else if (base::grepl("Epinion ", textcolor) == FALSE) {
+
+      textcolor <- paste0("Epinion ", textcolor)
+
+    }
+
+  }
+
+
   check_theme_map(legend = legend,
                   textcolor = textcolor)
 

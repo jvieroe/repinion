@@ -18,6 +18,27 @@ epitheme_classic <- function(legend = TRUE,
                              gridlines = "none",
                              textcolor = "DarkBlue") {
 
+
+  if (textcolor == "black") {
+
+    textcolor <- "black"
+
+  } else if (textcolor != "black") {
+
+    textcolor <- textcolor
+
+    if (base::grepl("Epinion ", textcolor) == TRUE) {
+
+      textcolor <- textcolor
+
+    } else if (base::grepl("Epinion ", textcolor) == FALSE) {
+
+      textcolor <- paste0("Epinion ", textcolor)
+
+    }
+
+  }
+
   check_theme(legend = legend,
               gridlines = gridlines,
               textcolor = textcolor)
