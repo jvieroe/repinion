@@ -66,7 +66,7 @@ check_theme_dust <- function(legend,
   }
 
   if(!background %in% c(TRUE, FALSE)) {
-    stop("Invalid 'background' argument provided. Must be 'no' or 'yes'")
+    stop("Invalid 'background' argument provided. Must be TRUE or FALSE")
   }
 
 }
