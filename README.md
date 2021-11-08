@@ -188,13 +188,15 @@ you to reverse the order of the color scale (default is `FALSE`).
 ``` r
 p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(vs))) +
   geom_point(size = 5, alpha = .95) +
-  epitheme_dust(legend = F) +
+  epitheme_dust(legend = F,
+                background = TRUE) +
   color_epi_d(primary = "Red",
               secondary = "Epinion DarkBlue")
 
 p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point(size = 5, alpha = .95) +
-  epitheme_dust(legend = F) +
+  epitheme_dust(legend = F,
+                background = TRUE) +
   color_epi_d(palette = "nosand")
 
 library(patchwork)
