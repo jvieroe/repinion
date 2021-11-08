@@ -8,7 +8,7 @@ epitheme_dust(
   legend = TRUE,
   gridlines = "both",
   textcolor = "DarkBlue",
-  background = "no"
+  background = FALSE
 )
 }
 \arguments{
@@ -18,7 +18,7 @@ epitheme_dust(
 
 \item{textcolor}{Color for text elements in \code{theme()} options. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), include only the color name, not the \code{"Epinion"} prefix. Default is "black"}
 
-\item{background}{Apply the WarmSand color to plot background? Options are "no" and "yes". Default is "no"}
+\item{background}{A logical value. Apply the WarmSand color to plot background? Default is FALSE}
 }
 \value{
 a CVI compliant plot

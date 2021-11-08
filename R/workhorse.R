@@ -65,7 +65,7 @@ check_theme_dust <- function(legend,
     stop("Invalid 'textcolor' argument provided. Must be either 'black' or one of names(repinion::epi_cols) (with or without Epinion prefix)")
   }
 
-  if(!background %in% c("no", "yes")) {
+  if(!background %in% c(TRUE, FALSE)) {
     stop("Invalid 'background' argument provided. Must be 'no' or 'yes'")
   }
 

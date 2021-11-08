@@ -4,7 +4,7 @@
 #' @param legend a logical value indicating whether a legend is included. Defaults to `TRUE` (with `legend.position` defaulting to `"bottom"`)
 #' @param gridlines Include gridlines? Options are `"both"`, `"none"`, `"x"` (for vertical), and `"y"` (for horizontal). Default is `"both"`
 #' @param textcolor Color for text elements in `theme()` options. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), include only the color name, not the `"Epinion"` prefix. Default is "black"
-#' @param background Apply the WarmSand color to plot background? Options are "no" and "yes". Default is "no"
+#' @param background A logical value. Apply the WarmSand color to plot background? Default is FALSE
 #' @return a CVI compliant plot
 #' @examples
 #' library(tidyverse)
@@ -18,7 +18,7 @@
 epitheme_dust <- function(legend = TRUE,
                           gridlines = "both",
                           textcolor = "DarkBlue",
-                          background = "no") {
+                          background = FALSE) {
 
   if (textcolor == "black") {
 
@@ -107,7 +107,7 @@ epitheme_dust <- function(legend = TRUE,
 
   }
 
-  if (background == "no") {
+  if (background == FALSE) {
 
     ppp <- pp +
       ggplot2::theme(plot.background = element_rect(fill = "transparent",
@@ -118,7 +118,7 @@ epitheme_dust <- function(legend = TRUE,
                                                           fill = "transparent")
                      )
 
-  } else if (background == "yes") {
+  } else if (background == TRUE) {
 
     ppp <- pp +
       ggplot2::theme(plot.background = element_rect(color = "transparent",
