@@ -16,7 +16,7 @@ epitheme_dust(
 
 \item{gridlines}{Include gridlines? Options are \code{"both"}, \code{"none"}, \code{"x"} (for vertical), and \code{"y"} (for horizontal). Default is \code{"both"}}
 
-\item{textcolor}{Color for text elements in \code{theme()} options. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), include only the color name, not the \code{"Epinion"} prefix. Default is "black"}
+\item{textcolor}{Color for text elements in \code{theme()} options. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), with or without the \code{"Epinion"} prefix. Default is "DarkBlue"}
 
 \item{background}{A logical value. Apply the WarmSand color to plot background? Default is FALSE}
 }

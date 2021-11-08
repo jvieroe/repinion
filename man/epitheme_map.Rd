@@ -9,7 +9,7 @@ epitheme_map(legend = TRUE, textcolor = "DarkBlue")
 \arguments{
 \item{legend}{a logical value indicating whether a legend is included. Defaults to \code{TRUE} (with \code{legend.position} defaulting to \code{"bottom"})}
 
-\item{textcolor}{Color for text elements in \code{theme()} options. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), include only the color name, not the \code{"Epinion"} prefix. Default is "black"}
+\item{textcolor}{Color for text elements in \code{theme()} options. Must be either "black" or a named color from the Epinion color palette (see \link[repinion]{getcols_epi}), with or without the \code{"Epinion"} prefix. Default is "DarkBlue"}
 }
 \value{
 a CVI compliant plot
