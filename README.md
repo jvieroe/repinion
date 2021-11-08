@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# repinion
+# repinion <img src='man/figures/logo.png' align="right" height="189" />
 
 <!-- badges: start -->
 
@@ -17,7 +17,7 @@ Master branch status:
 [![R-CMD-check](https://github.com/jvieroe/repinion/workflows/R-CMD-check/badge.svg)](https://github.com/jvieroe/repinion/actions)
 <!-- badges: end -->
 
-# Introduction <img src='man/figures/logo.png' align="right" height="139" />
+# Introduction
 
 The purpose of `repinion` is to provide Epinion employees with `ggplot2`
 functionality that quickly and easily makes your graphs compliant with
