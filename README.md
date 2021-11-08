@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# repinion repinion <img src='man/figures/logo.svg' align="right" height="189" />
+# repinion <img src='man/figures/logo.svg' align="right" height="189" />
 
 <!-- badges: start -->
 
