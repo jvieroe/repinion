@@ -5,7 +5,7 @@
 \alias{epipal_c}
 \title{Continuous Epinion color palettes}
 \format{
-A \code{list} with 6 elements
+A \code{list} with 9 elements
 }
 \usage{
 epipal_c

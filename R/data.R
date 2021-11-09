@@ -14,6 +14,6 @@
 
 #' Continuous Epinion color palettes
 #'
-#' @format A `list` with 6 elements
+#' @format A `list` with 9 elements
 "epipal_c"
 
