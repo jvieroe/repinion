@@ -54,6 +54,7 @@ ggplot(mtcars, aes(x = wt,
               se = F) +
   epitheme_classic(gridlines = "both") +
   color_epi_d(palette = "main")
+
 ```
 
 ## Installation
