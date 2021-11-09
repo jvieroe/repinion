@@ -196,12 +196,12 @@ names(repinion::epipal_c)
 p1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = disp)) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F, gridlines = "x") +
-  color_epi_c(palette = "epipurple")
+  color_epi_c(palette = "epigreen")
 
 p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = disp)) +
   geom_point(size = 5, alpha = .95) +
   epitheme_classic(legend = F, gridlines = "x") +
-  color_epi_c(palette = "epipurple",
+  color_epi_c(palette = "epigreen",
               reverse = T)
 
 p3 <- ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
