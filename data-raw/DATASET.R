@@ -45,17 +45,25 @@ usethis::use_data(epi_cols,
 # ---------- Create list with continuous color palettes ----------
 epipal_c <- list(
 
-  `epiblue` = getcols_epi("Epinion WarmSand", "Epinion ClearBlue", "Epinion DarkBlue"),
+  `epiblue` = getcols_epi("Epinion LightBlue", "Epinion DarkBlue"),
 
-  `epipurple` = getcols_epi("Epinion WarmSand", "Epinion LightPurple", "Epinion DarkPurple"),
+  `epipurple` = getcols_epi("Epinion LightPurple", "Epinion DarkPurple"),
 
-  `epigreen` = getcols_epi("Epinion WarmSand", "Epinion LightGreen", "Epinion Green"),
+  `epigreen` = getcols_epi("Epinion LightGreen", "Epinion Green"),
 
-  `epigold` = getcols_epi("Epinion WarmSand", "Epinion LightGold", "Epinion Gold"),
+  `epigold` = getcols_epi("Epinion LightGold", "Epinion Gold"),
 
   `epiredblue` = getcols_epi("Epinion Red", "Epinion DarkBlue"),
 
-  `epidarkblue` = getcols_epi("Epinion WarmSand", "Epinion DarkBlue")
+  `epigoldblue` = getcols_epi("Epinion LightGold", "Epinion DarkBlue"),
+
+  `epigoldgreen` = getcols_epi("Epinion LightGold", "Epinion Green"),
+
+  `epigoldpurple` = getcols_epi("Epinion LightGold", "Epinion DarkPurple"),
+
+  `epigoldred` = getcols_epi("Epinion LightGold", "Epinion Red")
+
+
 
 )
 
