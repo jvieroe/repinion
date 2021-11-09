@@ -71,7 +71,7 @@ devtools::install_github("jvieroe/repinion")
 
 Use `epitheme_*()` to quickly apply a tailormode `ggplot` theme to your graphs and data visualizations. This makes them compliant with the company CVI and serves as a time-saver, especially when producing numerous plots.
 
-At the moment, `repinion` contains three Epinion themes: 
+`repinion` contains three Epinion themes: 
 
 * `epitheme_classic()`, designed for most visualization purposes
   + arguments: `legend`, `gridlines`, `textcolor`
@@ -183,7 +183,13 @@ p1 / p2 +
 
 #### Additional arguments: `*_epi_c()`
 
-* `repinion` contains six different continuous color palettes: `epiblue`, `epipurple`, `epigreen`, `epigold`, `epiredblue`, and `epidarkblue`. 
+* `repinion` contains 9 different continuous color palettes:
+```{r warning=F, message=F}
+names(repinion::epipal_c)
+
+```
+
+
 * You choose between these with the `palette` option in `color_epi_c()` and `fill_epi_c()`
 
 ```{r warning=F, message=F}

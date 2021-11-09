@@ -68,7 +68,7 @@ graphs and data visualizations. This makes them compliant with the
 company CVI and serves as a time-saver, especially when producing
 numerous plots.
 
-At the moment, `repinion` contains three Epinion themes:
+`repinion` contains three Epinion themes:
 
   - `epitheme_classic()`, designed for most visualization purposes
       - arguments: `legend`, `gridlines`, `textcolor`
@@ -214,9 +214,17 @@ p1 / p2 +
 
 #### Additional arguments: `*_epi_c()`
 
-  - `repinion` contains six different continuous color palettes:
-    `epiblue`, `epipurple`, `epigreen`, `epigold`, `epiredblue`, and
-    `epidarkblue`.
+  - `repinion` contains 9 different continuous color palettes:
+
+<!-- end list -->
+
+``` r
+names(repinion::epipal_c)
+#> [1] "epiblue"       "epipurple"     "epigreen"      "epigold"      
+#> [5] "epiredblue"    "epigoldblue"   "epigoldgreen"  "epigoldpurple"
+#> [9] "epigoldred"
+```
+
   - You choose between these with the `palette` option in
     `color_epi_c()` and `fill_epi_c()`
 
@@ -250,7 +258,7 @@ library(patchwork)
   (p3 + p4)
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="85%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="85%" style="display: block; margin: auto;" />
 
 #### Additional arguments
 
