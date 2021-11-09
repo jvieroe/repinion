@@ -54,7 +54,6 @@ ggplot(mtcars, aes(x = wt,
               se = F) +
   epitheme_classic(gridlines = "both") +
   color_epi_d(palette = "main")
-
 ```
 
 ## Installation
@@ -107,7 +106,6 @@ You can apply custom-made Epinion color palettes with `repinion` through differe
 
 ```{r warning=F, message=F}
 getcols_epi()
-
 getcols_epi("Epinion DarkBlue")
 
 ```
@@ -128,8 +126,8 @@ p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   scale_color_manual(values = c(grabcol("Epinion DarkBlue"),
                                 grabcol("Epinion Red")))
 
-
 library(patchwork)
+
 (p1 / p2) 
 
 ```
@@ -169,7 +167,9 @@ p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
                 background = TRUE) +
   color_epi_d(palette = "nosand")
 
+
 library(patchwork)
+
 p1 / p2 + 
   plot_annotation(theme = 
                     theme(plot.background = 
@@ -208,10 +208,11 @@ p4 <- ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
   epitheme_classic(legend = F, gridlines = "y") +
   fill_epi_c(reverse = T)
 
+
 library(patchwork)
+
 (p1 + p2) /
   (p3 + p4)
-
 ```
 
 

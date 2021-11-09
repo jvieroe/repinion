@@ -117,7 +117,6 @@ getcols_epi()
 #>             "#BA7384"             "#A7C7D7"             "#004337" 
 #>    Epinion LightGreen          Epinion Gold     Epinion LightGold 
 #>             "#73A89A"             "#C18022"             "#EBC882"
-
 getcols_epi("Epinion DarkBlue")
 #> Epinion DarkBlue 
 #>        "#0F283C"
@@ -142,8 +141,8 @@ p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   scale_color_manual(values = c(grabcol("Epinion DarkBlue"),
                                 grabcol("Epinion Red")))
 
-
 library(patchwork)
+
 (p1 / p2) 
 ```
 
@@ -199,7 +198,9 @@ p2 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
                 background = TRUE) +
   color_epi_d(palette = "nosand")
 
+
 library(patchwork)
+
 p1 / p2 + 
   plot_annotation(theme = 
                     theme(plot.background = 
@@ -244,7 +245,9 @@ p4 <- ggplot(mtcars, aes(x = wt, y = mpg, fill = disp)) +
   epitheme_classic(legend = F, gridlines = "y") +
   fill_epi_c(reverse = T)
 
+
 library(patchwork)
+
 (p1 + p2) /
   (p3 + p4)
 ```
