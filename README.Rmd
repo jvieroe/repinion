@@ -81,7 +81,7 @@ Use `epitheme_*()` to quickly apply a tailormode `ggplot` theme to your graphs a
 * `epitheme_dust()`, to a large degree similar to `epitheme_classic()` but with a warmer, dusty feel
   + arguments: `legend`, `gridlines`, `textcolor`, `background`
   
-Note that you can override `theme()` elements inherent to `repinion::epitheme_*()` by specifying this in `theme(...)` __afterwards__.
+Note that you can override `theme()` elements inherent to `repinion::epitheme_*()` by specifying this in `theme(...)` _afterwards_.
 
 
 ```{r warning=F, message=F}

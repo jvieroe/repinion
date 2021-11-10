@@ -82,7 +82,7 @@ numerous plots.
 
 Note that you can override `theme()` elements inherent to
 `repinion::epitheme_*()` by specifying this in `theme(...)`
-**afterwards**.
+*afterwards*.
 
 ``` r
 ggplot(mtcars, aes(x = wt,
