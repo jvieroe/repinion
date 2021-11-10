@@ -268,7 +268,7 @@ for details on additional arguments.
 
 # Acknowledgements
 
--   The R Core Team for developing and maintaining the language
+-   The `R` Core Team for developing and maintaining the language
 -   Emil Teddy Stachurska ([emilteddy](https://github.com/emilteddy))
     for inspiration through the
     ([epinionR](https://github.com/emilteddy/epinionR)) package
