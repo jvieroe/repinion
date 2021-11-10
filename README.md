@@ -62,7 +62,7 @@ library(devtools)
 devtools::install_github("jvieroe/repinion")
 ```
 
-## Epinion `ggplot()` themes
+## **Epinion** `ggplot()` themes
 
 Use `epitheme_*()` to quickly apply a tailormode `ggplot` theme to your
 graphs and data visualizations. This makes them compliant with the
