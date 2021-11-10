@@ -14,7 +14,7 @@ grabcol <- function(color) {
 
   } else if (base::grepl("Epinion ", color) == FALSE) {
 
-    color <- paste0("Epinion ", color)
+    color <- base::paste0("Epinion ", color)
 
   }
 

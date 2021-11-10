@@ -104,7 +104,7 @@ epi_pal_d <- function(palette = "usered",
 
     } else if (base::grepl("Epinion ", primary) == FALSE) {
 
-      primary <- paste0("Epinion ", primary)
+      primary <- base::paste0("Epinion ", primary)
 
     }
 
@@ -118,7 +118,7 @@ epi_pal_d <- function(palette = "usered",
 
     } else if (base::grepl("Epinion ", secondary) == FALSE) {
 
-      secondary <- paste0("Epinion ", secondary)
+      secondary <- base::paste0("Epinion ", secondary)
 
     }
 

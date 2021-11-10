@@ -34,7 +34,7 @@ epitheme_dust <- function(legend = TRUE,
 
     } else if (base::grepl("Epinion ", textcolor) == FALSE) {
 
-      textcolor <- paste0("Epinion ", textcolor)
+      textcolor <- base::paste0("Epinion ", textcolor)
 
     }
 
