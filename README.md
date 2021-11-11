@@ -15,7 +15,7 @@ Releases](https://img.shields.io/github/downloads/jvieroe/repinion/total.svg)]()
 
 Master branch status:
 [![R-CMD-check](https://github.com/jvieroe/repinion/workflows/R-CMD-check/badge.svg)](https://github.com/jvieroe/repinion/actions)
-[![](https://img.shields.io/badge/devel%20version-0.1.0-dodgerblue.svg)](https://github.com/https://github.com/jvieroe/repinion)
+[![](https://img.shields.io/badge/devel%20version-0.1.1-dodgerblue.svg)](https://github.com/https://github.com/jvieroe/repinion)
 <!-- badges: end -->
 
 # Introduction
