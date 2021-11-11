@@ -6,8 +6,7 @@
 <!-- badges: start -->
 
 [![CodeFactor](https://www.codefactor.io/repository/github/jvieroe/repinion/badge)](https://www.codefactor.io/repository/github/jvieroe/repinion)
-[![Github All
-Releases](https://img.shields.io/github/downloads/jvieroe/repinion/total.svg)]()
+<!-- [![Github All Releases](https://img.shields.io/github/downloads/jvieroe/repinion/total.svg)]() -->
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![License: GPL (>=
 3)](https://img.shields.io/badge/license-GPL%20(%3E=%203)-blue.svg)](https://cran.r-project.org/web/licenses/GPL%20(%3E=%203))
