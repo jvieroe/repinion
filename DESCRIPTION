@@ -1,6 +1,6 @@
 Package: repinion
 Title: Create Epinion styled ggplots
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Jeppe",
            family = "Vierø",
