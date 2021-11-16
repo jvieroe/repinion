@@ -8,7 +8,7 @@
 
 #' Discrete Epinion color palettes
 #'
-#' @format A `list` with 3 elements
+#' @format A `list` with 6 elements
 "epipal_d"
 
 

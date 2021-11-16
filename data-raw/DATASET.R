@@ -143,6 +143,36 @@ epipal_d$nosand <- list(
 
 )
 
+epipal_d$likert5pb <- list(
+
+  "Epinion DarkPurple" = "#641E3C",
+  "Epinion LightPurple" = "#BA7384",
+  "Epinion WarmSand" = "#E8E1D5",
+  "Epinion LightBlue" = "#68838B",
+  "Epinion DarkBlue" = "#0F283C"
+
+)
+
+epipal_d$likert5pg <- list(
+
+  "Epinion DarkPurple" = "#641E3C",
+  "Epinion LightPurple" = "#BA7384",
+  "Epinion WarmSand" = "#E8E1D5",
+  "Epinion LightGold" = "#EBC882",
+  "Epinion Gold" = "#C18022"
+
+)
+
+epipal_d$likert5gb <- list(
+
+  "Epinion Gold" = "#C18022",
+  "Epinion LightGold" = "#EBC882",
+  "Epinion WarmSand" = "#E8E1D5",
+  "Epinion LightBlue" = "#68838B",
+  "Epinion DarkBlue" = "#0F283C"
+
+)
+
 
 # Upload data to GitHub
 usethis::use_data(epipal_d,
