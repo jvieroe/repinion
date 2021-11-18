@@ -268,12 +268,11 @@ for details on additional arguments.
 # Acknowledgements
 
 -   The `R` Core Team for developing and maintaining the language
--   Emil Teddy Stachurska ([emilteddy](https://github.com/emilteddy))
-    for inspiration through the
-    ([epinionR](https://github.com/emilteddy/epinionR)) package
+    <!-- * Emil Teddy Stachurska ([emilteddy](https://github.com/emilteddy)) for inspiration through the ([epinionR](https://github.com/emilteddy/epinionR)) package -->
 -   Hadley Wickham ([hadley](https://github.com/hadley)) and the rest of
     the team working on the amazing `ggplot2` package (and, frankly, the
     entire `tidyverse` ecosystem)
--   Garrick Aden-Buie ([gadenbuie](https://github.com/gadenbuie)) and Dr
-    Simon Jackson ([drsimonj](https://github.com/drsimonj)) for
+-   Garrick Aden-Buie ([gadenbuie](https://github.com/gadenbuie)), Dr
+    Simon Jackson ([drsimonj](https://github.com/drsimonj)), and Emil
+    Teddy Stachurska ([emilteddy](https://github.com/emilteddy)) for
     inspiration
