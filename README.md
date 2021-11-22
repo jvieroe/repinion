@@ -176,7 +176,7 @@ you to reverse the order of the color scale (default is `FALSE`).
     **only two levels**, you can manually choose colors with the
     `primary` and `secondary` arguments. As with `repinion::grabcol()`
     colors can be specified with or without the Epinion prefix
--   `repinion` contains three different discrete color palettes: `main`,
+-   `repinion` contains 6 different discrete color palettes: `main`,
     `usered` **(the default)**, and `nosand`. `main` excludes Epinion
     Red. `nosand` excludes Warm Sand and is the preferred discrete
     palette when using `epitheme_dust()`
