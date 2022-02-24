@@ -143,6 +143,23 @@ epipal_d$nosand <- list(
 
 )
 
+epipal_d$prio_green <- list(
+
+  "Epinion Red" = "#E13C32",
+  "Epinion DarkBlue" = "#0F283C",
+  "Epinion LightDeepBlue" = "#68838B",
+  "Epinion DarkPurple" = "#641E3C",
+  "Epinion Green" = "#004337",
+  "Epinion ClearBlue" = "#233CA0",
+  "Epinion LightPurple" = "#BA7384",
+  "Epinion LightBlue" = "#A7C7D7",
+  "Epinion LightGreen" = "#73A89A",
+  "Epinion Gold" = "#C18022",
+  "Epinion LightGold" = "#EBC882"
+
+)
+
+
 epipal_d$likert5pb <- list(
 
   "Epinion DarkPurple" = "#641E3C",
